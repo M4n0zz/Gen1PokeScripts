@@ -23,7 +23,6 @@ They are designed to either be run using TimoVM’s Nickname Writer or to be ins
 1. **Import via Nickname Writer:**
 Use Nickname Writer to import the hex code into your save file.
 
-2. **Verify in TimOS:**
-Once in-game, open the TimOS script selector and run the last script on the list.
-If everything was successful, the total number of available scripts should have increased by one, and the installed script should run without any issues.
+2. **Verify installation:**
+Once in-game, open the TimOS script selector and run the last script on the list. If everything was successful, the total number of available scripts should have increased by one, and the installed script should run without any issues.
 
