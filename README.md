@@ -3,13 +3,6 @@
 This repository contains my collection of Arbitrary Code Execution scripts for Pokémon Generation 1 games (Red, Blue, Yellow).
 They are designed to either be run using TimoVM’s Nickname Writer or to be installed with it in BlipBlopMenu or TimOS environment.
 
-Fully compatible with TimOS / BlipBlopMenu
-This repository serves as a library for my ACE scripts for Pokemon Red, Blue and Yellow English versions.
-
-Each script is built using QuickRGBDS
-
-TimoVM's Nickname Writer: You can run any compatible nickname code provided by <a href="https://glitchcity.wiki/wiki/Guides:Nickname_Writer_Codes">here</a>.
-
 ----
 ### Features
 
