@@ -8,18 +8,22 @@ They are designed to either be run using TimoVM’s Nickname Writer or to be ins
 
 - Ready-to-install HEX payloads
 - Compatible with original cartridges, VC and emulators
-- Assembly code compatible with QuickRGBDS for learning and customization purposes
+- Assembly source code for learning and customization purposes
 
 
 ### Requirements
 - A Gen 1 English Pokémon ROM or cartridge
 - An emulator like BGB or an actual Gameboy
-- Installation of BlipBlopMenu or [TimOS](https://glitchcity.wiki/wiki/Guides:TimoVM%27s_gen_1_ACE_setups) environment
-- QuickRGBDS (optional)
+- Installation of [BlipBlopMenu](https://github.com/M4n0zz/BlipBlopMenu2) or [TimOS](https://glitchcity.wiki/wiki/Guides:TimoVM%27s_gen_1_ACE_setups) environment
+- [QuickRGBDS](https://github.com/M4n0zz/QuickRGBDS) (optional)
 
 
 ### Installation
 
-**By injecting HEX code inside the game.**
+1. **Import via Nickname Writer:**
+Use Nickname Writer to import the hex code into your save file.
 
+2. **Verify in TimOS:**
+Once in-game, open the TimOS script selector and run the last script on the list.
+If everything was successful, the total number of available scripts should have increased by one, and the installed script should run without any issues.
 
