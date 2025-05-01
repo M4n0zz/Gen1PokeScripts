@@ -26,8 +26,8 @@ Use [Nickname Writer](https://glitchcity.wiki/wiki/Guides:Nickname_Writer_Codes)
 - $D8B4 for Pokémon Yellow
 
 2. **Run code:**
-Press Start to run the code.
+Press Start in the nickname verification screen to run the code.
 
 3. **Verify installation:**
-Once in-game, open the script selector and run the last script on the list. If everything was successful, the total number of available scripts should have increased by one, and the installed script should run without any issues.
+Open the script selector and run the last script on the list. If everything was successful, the total number of available scripts should have increased by one, and the installed script should run without any issues.
 
