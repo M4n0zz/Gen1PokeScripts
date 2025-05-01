@@ -1,17 +1,16 @@
 /*
 
-Polished Snake Script Installer - Compatible with EN Yellow ONLY
+Polished Snake Installer - Compatible with EN Yellow ONLY
 
 
 Description
-This script installs Polished Pong script into TimOS environment.
+This script Polished Snake into TimOS environment.
 
 
 Instructions
 1) Change "InstallationAddress" to the address you want to install your payload at.
-2) Put your script's code under "CustomPayload" section.
-3) Compile your script using (Quick)RGBDS.
-4) Install the output over NicknameWriter.
+2) Compile your script using (Quick)RGBDS.
+3) Install the output over NicknameWriter.
 
 The script will automatically calculate the offsets needed for:
 - Script selector
@@ -32,15 +31,15 @@ include "pokeyellow.inc"
 
 DEF borderTile 		= $d0
 DEF snakeTile 		= $d1
-DEF foodTile 		= $d7;ae
-DEF bgTile 			= $7f;c0
+DEF foodTile 		= $d7
+DEF bgTile 		= $7f
 DEF tileAddress 	= $5188
-DEF buffer 			= $d8b4;c700
-DEF nicknameaddress = $d8b4
+DEF buffer 		= $d8b4
+DEF nicknameaddress 	= $d8b4
 DEF atefood 		= $ffef
-DEF length 			= $fff0
-DEF score 			= $fff1
-DEF level 			= $fff2
+DEF length 		= $fff0
+DEF score 		= $fff1
+DEF level 		= $fff2
 DEF lastkey 		= $fff6
 DEF lastmove 		= $fff7
 DEF InstallationAddress = $c9ce
@@ -66,7 +65,7 @@ dec b
 jr nz, .pointerloop
 
 ; Copy pointers
-ld c, pointerwidth  ; Calculated in DEF - b = 0 from previous operation
+ld c, pointerwidth  	; Calculated in DEF - b = 0 from previous operation
 ld hl, pointers		; $d8d4	- origin
 call CopyData
 
@@ -77,8 +76,8 @@ jp CopyData
 
 
 ; ----------- Payload pointers ------------
-pointers:           ; it automatically calculates every script's starting point offsets
-db LOW(start),      HIGH(start)
+pointers:           	; it automatically calculates every script's starting point offsets
+db LOW(start), HIGH(start)
 .end
 ENDL
 
@@ -112,8 +111,8 @@ ld a, borderTile		; black tile (border)
 call FillMemory
 
 ; Draw vertical borders
-ld c, $12				; b is already 0, a is black
-ld d, $0f 				; screen height 
+ld c, $12			; b is already 0, a is black
+ld d, $0f 			; screen height 
 .loop
 ld [hli], a 			; right border tile
 add hl, bc
@@ -143,7 +142,7 @@ ld a, snakeTile
 ld hl, buffer			; save the snake position in the buffer	
 ld de, $c448 			; center of screen
 bufferloop:
-ld [de], a 				; place snake tile
+ld [de], a 			; place snake tile
 ld [hl], d
 inc hl
 ld [hl], e
@@ -162,8 +161,7 @@ ldh a, [atefood] 		; restore whether snake ate or not
 and a
 jr nz, placeobject
 
-movesnake:				; Move snake in the buffer
-; snake head is at buffer + 2 * snake_length - 2
+movesnake:			; Move snake in the buffer
 ldh a, [length]
 dec a
 add a
@@ -191,17 +189,17 @@ inc de
 dec b
 jr nz, movebody
 dec de
-dec de 					; de now points to previous snake head
+dec de 				; de now points to previous snake head
 jr loadhead
 
 placeobject:
-call Random				; Since A can handle values up to 255, we divide by 2 and multiply by 2 afterwards.
-cp a, $95 				; 298 empty tiles / 2  
+call Random			; Since A can handle values up to 255, we divide by 2 and multiply by 2 afterwards.
+cp a, $95 			; 298 empty tiles / 2  
 jr nc, placeobject 		; don't place the object outside the screen
 ld c, a
 ld b, $00
 ld hl, $c3b5			; 1st screen tile c3b5-c4de=398 tiles
-add hl, bc				; giati olo auto kai oxi aplh topothetish?
+add hl, bc
 add hl, bc
 call Random
 and a, $01
@@ -209,7 +207,7 @@ jr z, noinc
 inc hl
 noinc:
 ld a, bgTile 			; white tile
-cp [hl]					; check random tile
+cp [hl]				; check random tile
 jr nz, placeobject 		; don't place the object in a border or over a snake or obstacle tile
 ld [hl], foodTile 		; place object
 
@@ -249,7 +247,7 @@ bit 6, a
 ld bc, $ffec			; - $14 up
 jr nz, MovePosition
 bit 5, a
-ld c, b 				; - $01 left
+ld c, b 			; - $01 left
 jr nz, MovePosition
 bit 4, a
 ld bc, $0001 			; + $01 right
@@ -269,14 +267,14 @@ jr nz, checkCollision
 
 didEat:
 ldh [atefood], a
-ld 	a, 167           	; Load the sound identifier [A6 == error sound]
-call PlaySound        	; Play the sound [external subroutine]
+ld 	a, $a7           	; Load the sound identifier [A7 == eating sound]
+call PlaySound        		; Play the sound [external subroutine]
 
 	
 ; Save the new snake head tile in the buffer and draw the new head
 moveSnake:
 ld a, snakeTile
-ld [hl], a 				; draw head
+ld [hl], a 			; draw head
 ld a, h
 ld [de], a
 inc de
@@ -284,55 +282,47 @@ ld a, l
 ld [de], a
 
 
-DrawScore:				; update stats
-ld c, $04				; calculate and print score
+DrawScore:			; update stats
+ld c, $04			; calculate and print score
 ld de, length
 ld a, [de]
-inc de					; lenght to score
+inc de				; lenght to score
 sub a, c
-ld [de], a				; into score
+ld [de], a			; into score
 ld bc, $4103			; bit 6 of b set to align left, c = 3 digits
 ld hl, $c4fb
 call PrintNumber		; current score
 
-ld c, $06				; calculate and print level
-ld a, [de]
-cp a, $15				; if current score more than 18
-jr nc, samelevel		; keep same level
-ld bc, $0300
+ld bc, $1c14			; calculate and print level
+ld a, [de]			; load current length (PrintNumber actually decreses de)
+cp a, c				; if current score more than 17
+jr nc, samelevel		; use preset speed
+ld c, a				; else use current score
 
-levelup:				; subtracts 3 tiles from main body
-inc c
-sub a, b
-cp a, b
-jr nc, levelup
-
-samelevel:				; calculate delay frames
-ld a, $08				; example if skipping level (max speed)
-sub a, c				; 8-6=2
-add a					; 2+2=4
-add a					; 4+4=8
-ld c, a					; 8 delay frames
+samelevel:			; calculate delay frames
+ld a, b				; example if skipping level (max speed)
+sub a, c			; min 8
+ld c, a				; delay frames
 
 loopdelay:
 call DelayFrame
 
 ldh a, [hJoyInput]
 bit 1, a
-ret nz						; end game if B is pressed
-and $F0 				; %11110000, R/L/U/D bits
+ret nz				; end game if B is pressed
+and $F0 			; %11110000, R/L/U/D bits
 jr z, nobutton
 ld b, a
 
 ldh a, [lastmove]
-and a, $30				; check last active bits 4,5
-jr nz, next				; if not, we know last active bits are 6,7
+and a, $30			; check last active bits 4,5
+jr nz, next			; if not, we know last active bits are 6,7
 
 ld a, b
-and a, $C0				; if true we check new input
+and a, $C0			; if true we check new input
 jr nz, nobutton 		; if new input ands with non zero, we have same or forbidden direction, end of loop
 
-ld a, b					; if new input ands with zero, legal button is pressed, we update input
+ld a, b				; if new input ands with zero, legal button is pressed, we update input
 ldh [lastkey], a
 jr nobutton
 
@@ -340,10 +330,10 @@ jr nobutton
 ; lastmove and C0 is true for sure
 next:
 ld a, b
-and a, $30				; if true we check new input
+and a, $30			; if true we check new input
 jr nz, nobutton 		; if new input ands with non zero, we have same or forbidden direction, end of loop
 
-ld a, b					; if new input ands with zero, legal button is pressed, we update input
+ld a, b				; if new input ands with zero, legal button is pressed, we update input
 ldh [lastkey], a
 
 nobutton:
@@ -358,8 +348,8 @@ ld a, bgTile
 cp [hl]
 jp z, moveSnake
 ld 	a, $a6         		; Load the sound identifier [A6 == error sound]
-call PlaySound      	; Play the sound [external subroutine]
-call WaitForSoundToFinish ; Wait for sound to be done playing [external subroutine]
+call PlaySound 
+call WaitForSoundToFinish
 ldh a, [score]
 ld hl, highscore
 cp a, [hl]
@@ -368,13 +358,13 @@ ld [hl], a
 skip:
 jp EnterPoint
 
-text:					; " Score XXX Best XXX "
+text:				; " Score XXX Best XXX "
 db $7F, $92, $A2, $AE, $B1, $A4, $7F, $F6, $7F, $7F, $7F, $81, $A4, $B2, $B3, $7F, $50
 	
 highscore:
 db $00
 
-end:		; do not replace this
+end:				; do not replace this
 ENDL
 
 	
