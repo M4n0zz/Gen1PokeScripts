@@ -32,14 +32,14 @@ include "pokeyellow.inc"
 DEF borderTile 		= $d0
 DEF snakeTile 		= $d1
 DEF foodTile 		= $d7
-DEF bgTile 		= $7f
+DEF bgTile  		= $7f
 DEF tileAddress 	= $5188
-DEF buffer 		= $d8b4
-DEF nicknameaddress 	= $d8b4
+DEF buffer  		= $d8b4
+DEF nicknameaddress	= $d8b4
 DEF atefood 		= $ffef
-DEF length 		= $fff0
-DEF score 		= $fff1
-DEF level 		= $fff2
+DEF length 	    	= $fff0
+DEF score   		= $fff1
+DEF level   		= $fff2
 DEF lastkey 		= $fff6
 DEF lastmove 		= $fff7
 DEF InstallationAddress = $c9ce
@@ -65,7 +65,7 @@ dec b
 jr nz, .pointerloop
 
 ; Copy pointers
-ld c, pointerwidth  	; Calculated in DEF - b = 0 from previous operation
+ld c, pointerwidth	; Calculated in DEF - b = 0 from previous operation
 ld hl, pointers		; $d8d4	- origin
 call CopyData
 
@@ -76,7 +76,7 @@ jp CopyData
 
 
 ; ----------- Payload pointers ------------
-pointers:           	; it automatically calculates every script's starting point offsets
+pointers:	       ; it automatically calculates every script's starting point offsets
 db LOW(start), HIGH(start)
 .end
 ENDL
@@ -84,7 +84,7 @@ ENDL
 
 LOAD "Snake", WRAM0[InstallationAddress]
 
-start:		; do not replace this
+start:				; do not replace this
 
 CustomPayload:
 
@@ -96,11 +96,11 @@ call CopyVideoData
 
 EnterPoint:
 ; Clear BG
-call GBFadeOutToWhite	; fade out effect
+call GBFadeOutToWhite   	; fade out effect
 call ClearScreen		; Fill screen with 7F bytes = white tiles
 call UpdateSprites		; removes sprites from screen
 
-ld a, $10				; default direction value set to right
+ld a, $10			; default direction value set to right
 ldh [lastkey], a 		; starting movement lastkey
 ldh [atefood], a		; set non zero to draw food
 
@@ -128,8 +128,8 @@ call FillMemory 		; bottom row
 ld de, text
 call CopyString			; copies game's stats text
 ld bc, $4103			; bit 6 of b set to align left, c = 3 digits
-ld de, highscore
-ld hl, $c504			; screen tile position
+;ld de, highscore		; de=origin, left in the correct position from earlier
+dec hl					; screen tile position
 call PrintNumber		; print highscore
 	
 call GBFadeInFromWhite
@@ -141,14 +141,15 @@ ldh [length], a
 ld a, snakeTile
 ld hl, buffer			; save the snake position in the buffer	
 ld de, $c448 			; center of screen
+
 bufferloop:
 ld [de], a 			; place snake tile
 ld [hl], d
 inc hl
 ld [hl], e
 inc hl
-dec b
 inc de
+dec b
 jr nz, bufferloop
 
 
@@ -196,8 +197,7 @@ placeobject:
 call Random			; Since A can handle values up to 255, we divide by 2 and multiply by 2 afterwards.
 cp a, $95 			; 298 empty tiles / 2  
 jr nc, placeobject 		; don't place the object outside the screen
-ld c, a
-ld b, $00
+ld c, a				; b = 0 from previous operations
 ld hl, $c3b5			; 1st screen tile c3b5-c4de=398 tiles
 add hl, bc
 add hl, bc
@@ -289,20 +289,25 @@ ld a, [de]
 inc de				; lenght to score
 sub a, c
 ld [de], a			; into score
+ld hl, highscore
+cp a, [hl]
+jr c, nobest
+ld [hl], a
+nobest:
 ld bc, $4103			; bit 6 of b set to align left, c = 3 digits
 ld hl, $c4fb
 call PrintNumber		; current score
 
-ld bc, $1c14			; calculate and print level
+ld bc, $141c			; calculate and print level
 ld a, [de]			; load current length (PrintNumber actually decreses de)
-cp a, c				; if current score more than 17
+cp a, b				; if current score more than 17
 jr nc, samelevel		; use preset speed
-ld c, a				; else use current score
+ld b, a				; else use current score
 
 samelevel:			; calculate delay frames
-ld a, b				; example if skipping level (max speed)
-sub a, c			; min 8
-ld c, a				; delay frames
+ld a, c				; example if skipping level (max speed)
+sub a, b			; min 8
+ld b, a				; delay frames
 
 loopdelay:
 call DelayFrame
@@ -312,32 +317,32 @@ bit 1, a
 ret nz				; end game if B is pressed
 and $F0 			; %11110000, R/L/U/D bits
 jr z, nobutton
-ld b, a
+ld c, a
 
 ldh a, [lastmove]
 and a, $30			; check last active bits 4,5
 jr nz, next			; if not, we know last active bits are 6,7
 
-ld a, b
+ld a, c
 and a, $C0			; if true we check new input
 jr nz, nobutton 		; if new input ands with non zero, we have same or forbidden direction, end of loop
 
-ld a, b				; if new input ands with zero, legal button is pressed, we update input
+ld a, c				; if new input ands with zero, legal button is pressed, we update input
 ldh [lastkey], a
 jr nobutton
 
 
 ; lastmove and C0 is true for sure
 next:
-ld a, b
+ld a, c
 and a, $30			; if true we check new input
 jr nz, nobutton 		; if new input ands with non zero, we have same or forbidden direction, end of loop
 
-ld a, b				; if new input ands with zero, legal button is pressed, we update input
+ld a, c				; if new input ands with zero, legal button is pressed, we update input
 ldh [lastkey], a
 
 nobutton:
-dec c
+dec b
 jr nz, loopdelay
 
 jp DrawObject 			; make sure to place a new object to replace the one just eaten
@@ -348,14 +353,8 @@ ld a, bgTile
 cp [hl]
 jp z, moveSnake
 ld 	a, $a6         		; Load the sound identifier [A6 == error sound]
-call PlaySound 
-call WaitForSoundToFinish
-ldh a, [score]
-ld hl, highscore
-cp a, [hl]
-jr c, skip
-ld [hl], a
-skip:
+call PlaySound      		; Play the sound [external subroutine]
+call WaitForSoundToFinish ; Wait for sound to be done playing [external subroutine]
 jp EnterPoint
 
 text:				; " Score XXX Best XXX "
