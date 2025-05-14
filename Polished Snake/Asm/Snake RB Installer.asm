@@ -76,17 +76,23 @@ jp CopyData
 
 
 ; ----------- Payload pointers ------------
-pointers:           ; it automatically calculates every script's starting point offsets
-db LOW(start), HIGH(start)
+pointers:           	; it automatically calculates every script's starting point offsets
+db LOW(Begining), HIGH(Begining)
 .end
 ENDL
 
 
 LOAD "Snake", WRAM0[InstallationAddress]
 
-start:		; do not replace this
+start:			; do not replace this
 
 CustomPayload:
+
+collided:			; Snake collided
+ld a, $a6         		; Load the sound identifier [A6 == error sound]
+pop hl
+call PlaySound      		; Play the sound [external subroutine]
+call WaitForSoundToFinish ; Wait for sound to be done playing [external subroutine]
 
 Begining:
 ld bc, $0409			; load 9 tiles from bank $04
@@ -94,15 +100,14 @@ ld de, tileAddress		; from address
 ld hl, $8d00			; to vram address
 call CopyVideoData
 
-EnterPoint:
-; Clear BG
-call GBFadeOutToWhite	; fade out effect
+EnterPoint:			; Clear BG
+call GBFadeOutToWhite		; fade out effect
 call ClearScreen		; Fill screen with 7F bytes = white tiles
 call UpdateSprites		; removes sprites from screen
 
 ld a, $10			; default direction value set to right
 ldh [lastkey], a 		; starting movement lastkey
-ldh [atefood], a		; set non zero to draw food
+ldh [lastmove], a 
 
 ; Draw top border
 ld hl, wTileMap 		; 1st screen tile		
@@ -112,8 +117,8 @@ call FillMemory
 
 ; Draw vertical borders
 ld c, $12			; b is already 0, a is black
-ld d, $0f 			; screen height
-ld a, borderTile		; black tile (border)
+ld d, $0f 			; screen height 
+ld a, borderTile		; used only for rb
 .loop
 ld [hli], a 			; right border tile
 add hl, bc
@@ -129,76 +134,43 @@ call FillMemory 		; bottom row
 ld de, text
 call CopyString			; copies game's stats text
 ld bc, $4103			; bit 6 of b set to align left, c = 3 digits
-;ld de, highscore		; de=origin, left in the correct position from earlier
-dec hl					; screen tile position
+dec hl				; screen tile position
 call PrintNumber		; print highscore
 	
 call GBFadeInFromWhite
 
 ; Place the three-tile snake in the screen and save its position and length	
-ld b, $03
-ld a, b
+ld a, $02
 ldh [length], a	
-ld a, snakeTile
-ld hl, buffer			; save the snake position in the buffer	
-ld de, $c448 			; center of screen
-
-bufferloop:
-ld [de], a 			; place snake tile
-ld [hl], d
-inc hl
-ld [hl], e
-inc hl
-inc de
-dec b
-jr nz, bufferloop
-
+ld b, a
+ld de, buffer			; save the snake position in the buffer
+ld hl, $c445 			; center of screen
+call bufferloop
+push hl				; saves next tile position
+jr placeobject
 
 ; MAIN LOOP
+tilecheck:			; Check if the snake moved on empty tile
+push hl				; saves new tile position
+ld a, [hl]
+cp a, bgTile
+jr z, movesnake
+
+; Check if the snake ate the object
+cp a, foodTile
+jr nz, collided
+
+didEat:
+ld a, $a7           		; Load the sound identifier [A7 == eating sound]
+call PlaySound        		; Play the sound
 
 ; Draw the object that can be eaten in a random position in the screen
-DrawObject:
-ld de, buffer			; contains snake tail
-ldh a, [atefood] 		; restore whether snake ate or not
-and a
-jr nz, placeobject
-
-movesnake:			; Move snake in the buffer
-ldh a, [length]
-dec a
-add a
-ld b, a
-
-; Remove the snake's tail
-ld a, [de]
-ld h, a
-inc de
-ld a, [de]
-ld l, a
-dec de
-ld a, bgTile 			; white tile
-ld [hl], a
-	
-; move every snake tile one space
-movebody:
-inc de
-inc de
-ld a, [de]
-dec de
-dec de
-ld [de], a
-inc de
-dec b
-jr nz, movebody
-dec de
-dec de 				; de now points to previous snake head
-jr loadhead
-
 placeobject:
 call Random			; Since A can handle values up to 255, we divide by 2 and multiply by 2 afterwards.
 cp a, $95 			; 298 empty tiles / 2  
 jr nc, placeobject 		; don't place the object outside the screen
-ld c, a				; b = 0 from previous operations
+ld b, $00
+ld c, a
 ld hl, $c3b5			; 1st screen tile c3b5-c4de=398 tiles
 add hl, bc
 add hl, bc
@@ -212,94 +184,67 @@ cp [hl]				; check random tile
 jr nz, placeobject 		; don't place the object in a border or over a snake or obstacle tile
 ld [hl], foodTile 		; place object
 
-; If we ate the object in the last move, the snake only increases its length
-buffsnake:
+buffsnake:			; +1 length
 ldh a, [length]
 inc a
+cp a, $c7
+jr nc, movesnake
 ldh [length], a 		; increase snake length
-dec a
-dec a
-	
-movepointer:
-inc de
-inc de
-dec a
-jr nz, movepointer
-ldh [atefood], a		; a = 0 from above sequence
-; fallthrough	
+jr loadhead
 
 
-; de points to snake head tile, load its content (tile occupied) to hl
-loadhead:
-ld a, [de]
+movesnake:			; Move snake in the buffer
+; Remove the snake's tail
+ld de, buffer			; load last tile from buffer
+push de
+ld a, [de]			; into hl
 ld h, a
 inc de
 ld a, [de]
 ld l, a
-inc de 
-; fallthrough	
-
-	
-; Read user input
-ReadUserInput:
-ldh a, [lastkey] 		; load last key pressed out of R/L/U/D
-ldh [lastmove], a
-bit 6, a
-ld bc, $ffec			; - $14 up
-jr nz, MovePosition
-bit 5, a
-ld c, b 			; - $01 left
-jr nz, MovePosition
-bit 4, a
-ld bc, $0001 			; + $01 right
-jr nz, MovePosition
-MovePositionDown: 		; + $14 down
-ld c, $14
-; fallthrough
-
-; Calculate the new snake head and save it in the buffer
-MovePosition:
-add hl, bc
-
-; Check if the snake ate the object
-ld a, foodTile
-cp [hl]
-jr nz, checkCollision
-
-didEat:
-ldh [atefood], a
-ld 	a, $a7           	; Load the sound identifier [A7 == eating sound]
-call PlaySound        		; Play the sound [external subroutine]
-
-	
-; Save the new snake head tile in the buffer and draw the new head
-moveSnake:
-ld a, snakeTile
-ld [hl], a 			; draw head
-ld a, h
-ld [de], a
 inc de
-ld a, l
-ld [de], a
+ld [hl], bgTile 		; replace with white tile
+
+ldh a, [length]
+dec a				; subtracts head
+add a				; doubles size to fit buffer addresses
+ld c, a
+	
+; move every snake tile one space
+movebody:
+ld h, d
+ld l, e
+pop de
+call CopyMapConnectionHeader+2
+
+
+; add head tile
+loadhead:
+pop hl				; loads new head address to hl
+ld b, $01
+call bufferloop			; updates tile + buffer
+dec hl				; it selects head tile again
+push de				; buffer head +1
+push hl				; tile head 
+; fallthrough	
 
 
 DrawScore:			; update stats
-ld c, $04			; calculate and print score
+ld bc, $4103			; bit 6 of b set to align left, c = 3 digits
 ld de, length
 ld a, [de]
 inc de				; lenght to score
-sub a, c
+sub a, c			; c = 3 snake tiles too
 ld [de], a			; into score
 ld hl, highscore
 cp a, [hl]
 jr c, nobest
 ld [hl], a
 nobest:
-ld bc, $4103			; bit 6 of b set to align left, c = 3 digits
 ld hl, $c4fb
 call PrintNumber		; current score
 
-ld bc, $141c			; calculate and print level
+ld bc, $141c			; calculate speed level
 ld a, [de]			; load current length (PrintNumber actually decreses de)
 cp a, b				; if current score more than 17
 jr nc, samelevel		; use preset speed
@@ -309,6 +254,9 @@ samelevel:			; calculate delay frames
 ld a, c				; example if skipping level (max speed)
 sub a, b			; min 8
 ld b, a				; delay frames
+
+pop hl				; tile head
+pop de				; buffer +1
 
 loopdelay:
 call DelayFrame
@@ -346,19 +294,44 @@ nobutton:
 dec b
 jr nz, loopdelay
 
-jp DrawObject 			; make sure to place a new object to replace the one just eaten
 
-; Check if the snake collided so the player lost
-checkCollision:
-ld a, bgTile
-cp [hl]
-jp z, moveSnake
-ld 	a, $a6         		; Load the sound identifier [A6 == error sound]
-call PlaySound      		; Play the sound [external subroutine]
-call WaitForSoundToFinish 	; Wait for sound to be done playing [external subroutine]
-jp EnterPoint
+; Read user input
+ReadUserInput:
+ldh a, [lastkey] 		; load last key pressed out of R/L/U/D
+ldh [lastmove], a
+bit 6, a
+ld bc, $ffec			; - $14 up
+jr nz, MovePosition
+bit 5, a
+ld c, b 			; - $01 left
+jr nz, MovePosition
+bit 4, a
+inc bc
+inc bc 				; + $01 right
+jr nz, MovePosition
+MovePositionDown: 		; + $14 down
+ld c, $14
+; fallthrough
 
-	text:			; " Score XXX Best XXX "
+; Calculate the new snake head and save it in the buffer
+MovePosition:
+add hl, bc				; adds new offset to head'stile address
+jp tilecheck
+
+bufferloop:				; places b snake's tiles on screen and save their address int buffer
+ld [hl], snakeTile
+ld a, h
+ld [de], a
+inc de
+ld a, l
+ld [de], a
+inc de
+inc hl
+dec b
+ret z
+jr bufferloop
+
+text:					; " Score XXX Best XXX "
 db $7F, $92, $A2, $AE, $B1, $A4, $7F, $F6, $7F, $7F, $7F, $81, $A4, $B2, $B3, $7F, $50
 	
 highscore:
