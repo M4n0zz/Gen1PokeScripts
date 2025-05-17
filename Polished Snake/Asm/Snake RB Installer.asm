@@ -4,7 +4,7 @@ Polished Snake Installer - Compatible with EN Red and Blue ONLY
 
 
 Description
-This script Polished Snake into TimOS environment.
+This script installs Polished Snake into TimOS environment.
 
 
 Instructions
