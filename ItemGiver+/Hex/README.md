@@ -8,6 +8,6 @@ Use [Nickname Writer](https://glitchcity.wiki/wiki/Guides:Nickname_Writer_Codes)
 2. **Run code:**
 Press Start in the nickname verification screen to run the code.
 
-3. **Verify installation: (Installers only)**
+3. **Verify installation (Installers only):**
 Open the script selector and run the last script on the list. If everything was successful, the total number of available scripts should have increased by one, and the installed script should run without any issues.
 
