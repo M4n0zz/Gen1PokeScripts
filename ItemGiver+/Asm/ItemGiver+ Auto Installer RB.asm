@@ -63,7 +63,7 @@ add a, [hl]
 ld [hl], a
 
 ; write pointers to the correct position
-ld de, timospointers; start counting from script #1
+ld de, timospointers	; start counting from script #1
 .pointerloop
 inc e
 inc e
@@ -71,14 +71,14 @@ dec b
 jr nz, .pointerloop
 
 ; Copy pointers
-ld c, pointerwidth  ; Calculated in DEF - b = 0 from previous operation
+ld c, pointerwidth  	; Calculated in DEF - b = 0 from previous operation
 ld hl, pointers		; $d8d4	- origin
-call $00b5			; CopyData
+call CopyData
 
 ; Copy payloads
 ld c, payloadwidth	; Calculated in DEF
 pop de
-jp $00b5			; CopyData
+jp CopyData
 
 
 ; ----------- Payload pointers ------------
@@ -93,61 +93,60 @@ LOAD "CustomPayload", WRAM0[InstallationAddress]
 start:		; do not replace this
 
 Begining:
-ld 		hl, listaddress				; list header is stored
-ld 		a, l
-ld 		[wListPointer], a
-ld 		a, h
-ld 		[wListPointer + 1], a
+ld 	hl, listaddress				; list header is stored
+ld 	a, l
+ld 	[wListPointer], a
+ld 	a, h
+ld 	[wListPointer + 1], a
 
-ld		a, $ae
-ld		[listaddress], a
+ld	a, $ae
+ld	[listaddress], a
 
 xor 	a
 .loop1
 inc 	a
 inc 	hl
-ld 		[hl], a
-cp 		a, $73						; list is stopped before glitch names appear
-jr 		nz, .loop1
+ld 	[hl], a
+cp 	a, $73					; list is stopped before glitch names appear
+jr 	nz, .loop1
 
-ld 		a, $c4						; list continues from HMs 
+ld 	a, $c4					; list continues from HMs 
 
 .loop2
 inc 	hl
-ld 		[hl], a
+ld 	[hl], a
 inc 	a
-and 	a							; up to cancel item
-jr 		nz, .loop2
+and 	a					; up to cancel item
+jr 	nz, .loop2
 
-ld 		[wPrintItemPrices], a
-ld 		[wCurrentMenuItem], a
+ld 	[wPrintItemPrices], a
+ld 	[wCurrentMenuItem], a
 dec 	a
-ld 		[wMaxItemQuantity], a 
-ld 		a, $04
-ld 		[wListMenuID], a
+ld 	[wMaxItemQuantity], a 
+ld 	a, $04
+ld 	[wListMenuID], a
 
 reload:
 call 	DisplayListMenuID
-ldh 	a, [hJoyInput]
-bit 	1, a
-jr 		z, continue					; end if B is pressed
+and 	a, a	
+jr 	nz, continue				; end if B is pressed
 xor 	a
-ld 		[wListScrollOffset], a
+ld 	[wListScrollOffset], a
 ret
 
 continue:
 call 	DisplayChooseQuantityMenu
 and 	a, a	
-jr 		nz, reload					; if B pressed reload menu
-ld 		a, [wItemQuantity]
-ld 		c, a						; b, c = id, quantity
-ld 		a, [wCurItem]
-ld 		b, a
+jr 	nz, reload				; if B pressed reload menu
+ld 	a, [wItemQuantity]
+ld 	c, a					; b, c = id, quantity
+ld 	a, [wCurItem]
+ld 	b, a
 call 	GiveItem
-ld 		a, $86         				; Load the sound identifier [86 == levelup sound]
+ld 	a, $86         				; Load the sound identifier [86 == levelup sound]
 call 	PlaySound      				; Play the sound
 
-jr 		reload						; reload menu
+jr 	reload					; reload menu
 
 end:		; do not replace this
 ENDL
