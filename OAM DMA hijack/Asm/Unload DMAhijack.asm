@@ -5,24 +5,25 @@ https://github.com/M4n0zz/QuickRGBDS
 
 */
 
-
-include "pokeyellow.inc"
+;include "pokered.inc"
+;include "pokeyellow.inc"
 
 SECTION "OAM_Hijack", ROM0
 
 start:
-LOAD "Payload", WRAMX[$d8b4]
+LOAD "Payload", WRAMX[$d8b4]       ; address is not important because se don't have static jumps
+     
 hijack:
-di					; we'll be messing with $FF80, so stop all interrupts
-ld hl, $FF80
-ld [hl], $3E
+di                       ; because DMA routine triggers out of sync with our payload
+ld hl, $FF80             ; we stop all interrupts to avoid crashes
+ld [hl], $3E             ; $ff80-$ff83 OAM DMA's original values are restored
 inc hl
 ld [hl], $C3
 inc hl
 ld [hl], $E0
 inc hl
 ld [hl], $46
-reti	
+reti	                    ; returns and enables interrupts at the same time
 
 .end
 ENDL
