@@ -4,9 +4,9 @@
 This technique allows you to run a custom payload continuously in the background during gameplay.
 It's especially useful  when you want to:
 
-- Constantly check or modify memory while being in the Overworld
+- Constantly check or modify memory addresses while being in the Overworld
 - Change screen tiles or text on the fly
-- "Freeze" specific memory values (like a GameShark code)
+- "Freeze" specific memory values (like a GameShark code does)
 
 The included .asm files demonstrate how the OAM DMA hijack works, allowing you to insert your own payload at the end of the routine.
 
