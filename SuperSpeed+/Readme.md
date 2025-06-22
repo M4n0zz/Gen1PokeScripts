@@ -1,4 +1,4 @@
-# SuperSpeed+ 🏃 
+# 🏃 SuperSpeed+
 
 This script doubles the speed of all Overworld activity while it’s active.
 
