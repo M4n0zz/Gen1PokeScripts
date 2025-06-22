@@ -1,19 +1,19 @@
-# Polished Snake
+# 🐍 Polished Snake
 
-This script adds a polished version of snake game, inspired by TheZZAZZGlitch's version.
+A smooth and responsive Snake mini-game with enhanced visuals and gameplay.
+Designed for fun, stability, and seamless integration in Gen 1 games.
 
-Some new features added:
-- Added new graphics
-- Controls feel natural and stable
-- Added level up logic that speeds up snake
-- Added score counter
-- Added best score autosave
+-----
+### Features
+
+- Custom graphics for a clean visual style
+- Refined controls for natural and reliable gameplay
+- Level-up system that increases speed as you progress
+- Score counter to track your performance
+- Best score autosave so your high score is remembered
 
 ----
 ### Installation
 
-The script is available with the installer option only, since it uses Nickname Writer's unused battle data as a place to create snake's internal buffer
-
-
-
+This script is available via installation in TimOS environment only, since it uses Nickname Writer's region to temporarily store Snake's internal buffer.
 
