@@ -18,7 +18,7 @@ Here's how it works:
 
 - The DMA payload constantly checks the stack for a specific return address used by the DelayFrame function (a routine commonly called during Overworld activity).
 
--  When this return address is detected, it is redirected to a custom payload instead.
+- When this return address is detected, it is replaced to target a custom payload instead.
 
 - This payload executes in sync with the Overworld loop, allowing for smooth integration.
 
