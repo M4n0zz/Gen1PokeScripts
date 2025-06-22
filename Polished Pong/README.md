@@ -4,7 +4,7 @@ This script adds a refined version of the classic Pong mini-game, originally cre
 # ![preview](PolishedPong.jpg)
 ### Features
 
-- Custom graphics for a clean and modern look
+- Custom graphics for a clean look
 - More forgiving hitbox for improved control and smoother gameplay
 - Progressive speed increase to keep the challenge engaging
 - Live score counter so you can track your performance in real time
