@@ -35,7 +35,7 @@ DEF foodTile             = $d7
 DEF bgTile               = $7f
 DEF tileAddress          = $65f8
 DEF buffer               = $d8b5
-DEF nicknameaddress	     = $d8b5
+DEF nicknameaddress      = $d8b5
 DEF atefood              = $ffef
 DEF length               = $fff0
 DEF score                = $fff1
@@ -52,12 +52,12 @@ Installer:
 ; increse no of scripts
 ld   hl, $c6e9
 ld   b, [hl]
-ld   a, scriptnumber	; calculated in DEF
+ld   a, scriptnumber          ; calculated in DEF
 add  a, [hl]
 ld   [hl], a
 
 ; write pointers to the correct position
-ld   de, $c7c2		; start counting from script #1
+ld   de, $c7c2                ; start counting from script #1
 .pointerloop
 inc  e
 inc  e
@@ -65,18 +65,18 @@ dec  b
 jr   nz, .pointerloop
 
 ; Copy pointers
-ld   c, pointerwidth	; Calculated in DEF - b = 0 from previous operation
-ld   hl, pointers		; $d8d4	- origin
+ld   c, pointerwidth          ; Calculated in DEF - b = 0 from previous operation
+ld   hl, pointers             ; origin
 call CopyData
 
 ; Copy payloads
-ld   bc, payloadwidth	; Calculated in DEF
+ld   bc, payloadwidth         ; Calculated in DEF
 ld   de, InstallationAddress
 jp   CopyData
 
 
 ; ----------- Payload pointers ------------
-pointers:           	; it automatically calculates every script's starting point offsets
+pointers:                     ; it automatically calculates every script's starting point offsets
 db LOW(Begining), HIGH(Begining)
 .end
 ENDL
