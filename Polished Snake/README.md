@@ -4,7 +4,6 @@ A smooth and responsive Snake mini-game with enhanced visuals and gameplay.
 Designed for fun, stability, and seamless integration in Gen 1 games.
 # ![preview](PolishedSnake.jpg)
 
------
 ### Features
 
 - Custom graphics for a clean visual style
