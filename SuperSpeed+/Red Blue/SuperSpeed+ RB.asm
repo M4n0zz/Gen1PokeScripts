@@ -57,7 +57,7 @@ ret
 ; script activates when delayFrame ends in overworld loop
 .speedon
 ldh  a, [hJoyHeld]
-bit  0, a                     ; check if button A is pressed
+bit  0, a                ; check if button A is pressed
 jp   z, returnaddress
 
 .loop
