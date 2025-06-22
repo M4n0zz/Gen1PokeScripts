@@ -1,7 +1,7 @@
 # 🕹️ Polished Pong
 
 This script adds a refined version of the classic Pong mini-game, originally created by TheZZAZZGlitch — now with enhanced features and improved gameplay!
-
+# ![preview](PolishedPong.jpg)
 ### Features
 
 - Custom graphics for a clean and modern look
