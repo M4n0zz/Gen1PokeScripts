@@ -1,15 +1,25 @@
-# ItemGiver+
+# 📜 ItemGiver+
 
-ItemGiver+ creates a menu that lets you safely obtain any item in the game in any quantity, without needing to know its internal hex ID. Furthermore you can delete the last item in your bag by pressing any key along with button B.
-![Watch the video](ItemGiver.jpg)](ItemGiver+.mp4)
+This script adds a simple item menu that lets you:
 
-This script is designed for simplicity, especially when creating item-based ACE payloads.
+- Select and obtain any item in the game, in any quantity (no need to know item hex IDs!)
+- Delete the last item in your bag instantly by holding any button + B
 
-----
-### How to Use
+It’s designed with simplicity in mind, making it especially useful when working with item-based ACE payloads.
 
-The script comes in 3 different forms:
+# ![preview](ItemGiver+.JPG)
 
-- Auto Installer: It automatically finds unused memory and installs the script inside TimOS region.
-- Static Installer: It installs the script in a predefined memory address.
-- Standalone: The script can run temporarily and it is lost after the game restarts or a trainer battle is initiated.
+
+### Installation Options
+
+The script is available in three different forms, depending on your needs:
+
+- Auto Installer: 
+Automatically finds unused memory and installs the script within the TimOS region. Ideal for quick setup with no manual address handling.
+
+- Static Installer: 
+Installs the script at a predefined memory address. Best suited for advanced users who want full control over memory layout.
+
+- Standalone Version: 
+Runs the script temporarily — useful for just getting the job done. The script is lost when a trainer battle starts.
+
