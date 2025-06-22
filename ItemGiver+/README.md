@@ -1,6 +1,7 @@
 # ItemGiver+
 
 ItemGiver+ creates a menu that lets you safely obtain any item in the game in any quantity, without needing to know its internal hex ID. Furthermore you can delete the last item in your bag by pressing any key along with button B.
+![Watch the video](ItemGiver.jpg)](ItemGiver+.mp4)
 
 This script is designed for simplicity, especially when creating item-based ACE payloads.
 
