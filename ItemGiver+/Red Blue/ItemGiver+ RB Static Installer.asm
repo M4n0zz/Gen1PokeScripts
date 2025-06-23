@@ -29,10 +29,10 @@ https://github.com/M4n0zz/QuickRGBDS
 
 include "pokered.inc"
 
-DEF nicknameaddress 	= $d8b5
-DEF listaddress 		= $d8b5
-DEF timospointers 		= $c7c2
-DEF InstallationAddress 	= $c9ce
+DEF nicknameaddress      = $d8b5
+DEF listaddress          = $d8b5
+DEF timospointers        = $c7c2
+DEF InstallationAddress  = $c9ce
 
 SECTION "ItemGiver+", ROM0
 
@@ -40,29 +40,29 @@ LOAD "Installer", WRAMX[nicknameaddress]
 ; ----------- Installer payload ------------ 
 Installer:
 ; increse no of scripts
-ld  	hl, $c6e9
-ld  	b, [hl]
-ld  	a, scriptnumber               ; calculated in DEF
-add 	a, [hl]
-ld  	[hl], a
+ld   hl, $c6e9
+ld   b, [hl]
+ld   a, scriptnumber               ; calculated in DEF
+add  a, [hl]
+ld   [hl], a
 
 ; write pointers to the correct position
-ld  	de, timospointers             ; start counting from script #1
+ld   de, timospointers             ; start counting from script #1
 .pointerloop
-inc 	e
-inc 	e
-dec 	b
-jr  	nz, .pointerloop
+inc  e
+inc  e
+dec  b
+jr   nz, .pointerloop
 
 ; Copy pointers
-ld  	c, pointerwidth               ; Calculated in DEF - b = 0 from previous operation
-ld  	hl, pointers                  ; origin
+ld   c, pointerwidth               ; Calculated in DEF - b = 0 from previous operation
+ld   hl, pointers                  ; origin
 call	CopyData
 
 ; Copy payloads
-ld  	bc, payloadwidth              ; Calculated in DEF
-ld  	de, InstallationAddress
-jp  	CopyData
+ld   bc, payloadwidth              ; Calculated in DEF
+ld   de, InstallationAddress
+jp   CopyData
 
 
 ; ----------- Payload pointers ------------
