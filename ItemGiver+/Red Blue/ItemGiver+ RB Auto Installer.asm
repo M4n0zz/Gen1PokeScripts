@@ -72,7 +72,7 @@ jr   nz, .pointerloop
 
 ; Copy pointers
 ld   c, pointerwidth          ; Calculated in DEF - b = 0 from previous operation
-ld   hl, pointers             ; $d8d4	- origin
+ld   hl, pointers             ; origin
 call CopyData
 
 ; Copy payloads
