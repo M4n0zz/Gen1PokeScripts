@@ -117,8 +117,8 @@ pop  hl
 jp 	EntryPoint
 
 nogameover:
-cp	a, $0f                   ; Check if Y=$0F [DEC 15] - the vertical position of the pad
-jr 	nz, UpdateBallPosition   ; If it isn't there's no need to check for collision with the pad
+cp   a, $0f                   ; Check if Y=$0F [DEC 15] - the vertical position of the pad
+jr   nz, UpdateBallPosition   ; If it isn't there's no need to check for collision with the pad
 
 ldh  a, [$ffef]
 inc  a
@@ -134,13 +134,13 @@ jr   z, samehardness
 ldh  [$fff0], a
 
 samehardness:
-ld 	e, d
+ld   e, d
 dec  e
-ld 	b, $08
-ldh	a, [$ffa2]               ; Load the ball X location to register A
+ld   b, $08
+ldh  a, [$ffa2]               ; Load the ball X location to register A
 
 Loop1:
-cp 	e                        ; Check if the ball touches the pad
+cp   e                        ; Check if the ball touches the pad
 jr   nz, nobounce
 ; update counter
 push af
@@ -152,47 +152,47 @@ continue:
 call BallBounce               ; Bounce if it does
 nobounce:
 inc  e
-dec	b
-jr 	nz, Loop1                ; Check it for all 4 spots on the pad
+dec  b
+jr   nz, Loop1                ; Check it for all 4 spots on the pad
 
 ; Moves the ball on diagonals based on the direction byte
 UpdateBallPosition:
-ld 	a, [hl]                  ; Load the ball direction byte to register A
-inc	l
-inc	l                        ; HL=FFA2 [address of ball's X position]
-ld 	b, a                     ; Store a copy of the direction byte for later comparisons
-and	a, $0f                   ; Check if the lower nibble of the direction byte is 0xF
-jr 	nz, dontincx             ; If it is, increment X position
-inc	[hl]                      
-xor	a  
+ld   a, [hl]                  ; Load the ball direction byte to register A
+inc  l
+inc  l                        ; HL=FFA2 [address of ball's X position]
+ld   b, a                     ; Store a copy of the direction byte for later comparisons
+and  a, $0f                   ; Check if the lower nibble of the direction byte is 0xF
+jr   nz, dontincx             ; If it is, increment X position
+inc  [hl]                      
+xor  a  
 
 dontincx:                     ; Since every a XOR a equals 0, this instruction will set the zero flag
-jr 	z, dontdecx              ; If it isn't, decrement X position
+jr   z, dontdecx              ; If it isn't, decrement X position
 dec  [hl]
 xor  a       
 
 dontdecx:
-inc	l                        ; HL=FFA3 [address of ball's Y position]
-ld	a, b
-and	a, $f0                   ; Check if the upper nibble of the direction byte is 0xF
-jr 	nz, dontincy             ; If it is, increment Y position
+inc  l                        ; HL=FFA3 [address of ball's Y position]
+ld   a, b
+and  a, $f0                   ; Check if the upper nibble of the direction byte is 0xF
+jr   nz, dontincy             ; If it is, increment Y position
 inc  [hl]                      
 xor  a 
 
 dontincy:
-jr 	z, dontdecy              ; If it isn't, decrement Y position
-dec	[hl]
-xor	a 
+jr   z, dontdecy              ; If it isn't, decrement Y position
+dec  [hl]
+xor  a 
 	
 dontdecy:                     ; Calculates the drawing location [screen IO address] for the ball
 pop  hl                       ; Restore HL from all the way before [HL is now screen IO address]
 ldh  a, [$ffa2]               ; Loads the ball X position
 add  l                         
-ld 	l, a                     ; Adds it to HL to calculate the ball's X drawing location
+ld   l, a                     ; Adds it to HL to calculate the ball's X drawing location
 ldh  a, [$ffa3]               ; Loads the ball Y position
-ld 	bc, $0014                ; BC=0014: screen's width: adding it to HL will advance the drawing location 1 block downwards
+ld   bc, $0014                ; BC=0014: screen's width: adding it to HL will advance the drawing location 1 block downwards
 and  a                        ; Check if A is equal to 0
-jr 	z, DrawBall              ; If it is, skip the loop, as the ball drawing position is already calculated
+jr   z, DrawBall              ; If it is, skip the loop, as the ball drawing position is already calculated
 
 DrawBallLoop:                 ; Part of the ball's drawing location calculation
 add  hl, bc                   ; Increase the Y drawing location by 1 block
@@ -201,28 +201,28 @@ jr   nz, DrawBallLoop         ; Jump back if it is not equal to 0
 
 DrawBall:                     ; Draws the ball on the screen
 ld   a, ballTile
-ld 	[hl], a                  ; Yeah, that was very hard...
+ld   [hl], a                  ; Yeah, that was very hard...
 
 ; Checks for key input, moves the pad accordingly   
 pop  de                       ; Restore DE from all the way before [D contains now pad's X coordinate]
-ld 	a, d                       
-cp 	a, $0f                   ; Check if the pad is on the screen's rightmost edge
-jr 	z, SkipRightKey          ; If it is, skip this check so the pad does not go outside the screen bounds
+ld   a, d                       
+cp   a, $0f                   ; Check if the pad is on the screen's rightmost edge
+jr   z, SkipRightKey          ; If it is, skip this check so the pad does not go outside the screen bounds
 ldh  a, [hJoyInput]           ; Load key input address
 and  a, $10                   ; Check for bit 4
-jr 	z, SkipRightKey          ; Increment the pad X location if it is set
+jr   z, SkipRightKey          ; Increment the pad X location if it is set
 inc  d                        ; Increments the D register. Used in conditional jumps.
 
 ; Part of key input checking
 SkipRightKey:             
-ld 	a, d
+ld   a, d
 and  a                        ; Check if the pad is on the screen's leftmost edge
-jr 	z, DelayFrames2          ; If it is, skip this check so the pad does not go outside the screen bounds
+jr   z, DelayFrames2          ; If it is, skip this check so the pad does not go outside the screen bounds
 ldh  a, [hJoyInput]           ; Load key input address
 bit  1, a                     ; Check for bit 1
 ret  nz
 and  a, $20                   ; Check for bit 5
-jr 	z, DelayFrames2          ; Decrement the pad Y location if it is set
+jr   z, DelayFrames2          ; Decrement the pad Y location if it is set
 dec  d
 
 ; Renders the screen, delays 5 frames and returns back to the game tick procedure
