@@ -23,7 +23,7 @@ inc  hl
 ld   [hl], $E0
 inc  hl
 ld   [hl], $46
-reti	                         ; returns and enables interrupts at the same time
+reti                          ; returns and enables interrupts at the same time
 
 .end
 ENDL
