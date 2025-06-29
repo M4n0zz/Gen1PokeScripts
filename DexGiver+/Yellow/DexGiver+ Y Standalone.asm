@@ -124,7 +124,7 @@ ld   [hl], a
 ret
 
 hijackpayload:                ; when  HandlePokedexListMenu finishes execution it jumps to this script instead
-jp	nc, returnaddress+2
+jp   nc, returnaddress+2
 
 continue:
 ld   a, $64
@@ -137,10 +137,10 @@ ld   a, [wCurrentMenuItem]
 ld   b, a
 ld   a, [wListScrollOffset]
 add  a, b                     ; calculates selected item position
-inc 	a
+inc  a
 ld   [wPokedexNum], a
-ld 	b, $10
-ld 	hl, PokedexToIndex       ; changes pokedex id to pokemon id
+ld   b, $10
+ld   hl, PokedexToIndex       ; changes pokedex id to pokemon id
 call Bankswitch
 ld   a, [wPokedexNum]
 ld   b, a
