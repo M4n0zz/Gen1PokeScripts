@@ -21,4 +21,4 @@ The included .asm files demonstrate how the OAM DMA hijack works, allowing you t
 ### ⚠ Important Notes:
 
 - Do not overwrite the DMA payload while the hijack is active — doing so is risky and will most likely cause the game to crash.
-- Do not use the DMA hijack together with BlipBlopMenu — BlipBlopMenu already uses the same hijack internally. Overwriting it may cause conflicts and break functionality.
+- Do not use the DMA hijack along with [BlipBlopMenu](https://github.com/M4n0zz/BlipBlopMenu2) — it already uses the same hijack internally. Overwriting it may cause conflicts and break functionality.
