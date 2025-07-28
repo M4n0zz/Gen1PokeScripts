@@ -1,7 +1,7 @@
 # ACE Scripts for English Pokémon Red, Blue and Yellow
 
 This repository contains my collection of Arbitrary Code Execution scripts for Pokémon Generation 1 games (Red, Blue, Yellow).
-They are designed to either be run using TimoVM’s Nickname Writer or to be installed with it in BlipBlopMenu or TimOS environment.
+They are designed to either be run using TimoVM’s Nickname Writer or to be installed with it inside TimOS environment.
 
 ----
 ### Features
