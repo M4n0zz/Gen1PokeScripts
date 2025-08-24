@@ -10,7 +10,7 @@ Do use the latest *.inc files from the repo, to avoid compilation errors
 
 include "pokered.inc"
 
-DEF timospointers             = $c7c2
+DEF timospointers             = $c7c7
 DEF nicknameaddress           = $d8b5
 DEF InstallationAddress       = $c9ce
 DEF stackaddress              = $dfd1
@@ -199,4 +199,5 @@ ENDL
 DEF scriptnumber = (pointers.end - pointers) / 2
 DEF pointerwidth = pointers.end - pointers
 DEF payloadwidth = end - start
+
 
