@@ -57,7 +57,7 @@ add  a, [hl]
 ld   [hl], a
 
 ; write pointers to the correct position
-ld   de, $c7bb                ; start counting from script #1
+ld   de, $c7c0                ; start counting from script #1
 .pointerloop
 inc  e
 inc  e
@@ -345,3 +345,4 @@ ENDL
 DEF scriptnumber = (pointers.end - pointers) / 2
 DEF pointerwidth = pointers.end - pointers
 DEF payloadwidth = end - start
+
