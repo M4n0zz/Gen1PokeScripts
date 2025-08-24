@@ -31,7 +31,7 @@ include "pokeyellow.inc"
 
 DEF nicknameaddress      = $d8b4
 DEF listaddress          = $d8b4
-DEF timospointers        = $c7bb
+DEF timospointers        = $c7c0
 DEF InstallationAddress  = $c9ce
 
 SECTION "ScriptInstaller", ROM0
@@ -180,3 +180,4 @@ ENDL
 DEF scriptnumber = (pointers.end - pointers) / 2
 DEF pointerwidth = pointers.end - pointers
 DEF payloadwidth = end - start
+
