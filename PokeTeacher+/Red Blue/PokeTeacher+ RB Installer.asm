@@ -11,7 +11,7 @@ include "pokered.inc"
 
 
 DEF InstallationAddress       = $c9ce
-DEF timospointers             = $c7c2
+DEF timospointers             = $c7c7
 DEF nicknameaddress           = $d8b5
 DEF stackaddress              = $dfdd
 DEF returnaddress             = DisplayListMenuIDLoopnotOldManBattle+6
@@ -183,4 +183,5 @@ ENDL
 DEF scriptnumber = (pointers.end - pointers) / 2
 DEF pointerwidth = pointers.end - pointers
 DEF payloadwidth = end - start
+
 
