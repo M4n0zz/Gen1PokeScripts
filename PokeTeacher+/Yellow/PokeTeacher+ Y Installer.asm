@@ -9,7 +9,7 @@ Do use the latest *.inc files from the repo, to avoid compilation errors
      
 include "pokeyellow.inc"
 
-DEF timospointers             = $c7bb
+DEF timospointers             = $c7c0
 DEF nicknameaddress           = $d8b4
 DEF InstallationAddress       = $c9ce
 DEF stackaddress              = $dfe1
@@ -182,4 +182,5 @@ ENDL
 DEF scriptnumber = (pointers.end - pointers) / 2
 DEF pointerwidth = pointers.end - pointers
 DEF payloadwidth = end - start
+
 
