@@ -29,7 +29,7 @@ include "pokered.inc"
 
 DEF nicknameaddress      = $d8b5
 DEF listaddress          = $d8b5
-DEF timospointers        = $c7c2
+DEF timospointers        = $c7c7
 DEF InstallationAddress  = $c8c3
 
 SECTION "AutoScriptInstaller", ROM0
@@ -178,3 +178,4 @@ ENDL
 DEF scriptnumber = (pointers.end - pointers) / 2
 DEF pointerwidth = pointers.end - pointers
 DEF payloadwidth = end - start
+
