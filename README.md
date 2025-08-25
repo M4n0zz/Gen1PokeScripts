@@ -14,7 +14,7 @@ They are designed to either be run using TimoVM’s Nickname Writer or to be ins
 ### Requirements
 - A Gen 1 English Pokémon ROM or cartridge
 - An emulator like BGB or an actual Gameboy
-- Installation of [BlipBlopMenu](https://github.com/M4n0zz/BlipBlopMenu2) or [TimOS](https://glitchcity.wiki/wiki/Guides:TimoVM%27s_gen_1_ACE_setups) environment
+- Installation of latest [TimOS](https://glitchcity.wiki/wiki/Guides:TimoVM%27s_gen_1_ACE_setups) version
 - [QuickRGBDS](https://github.com/M4n0zz/QuickRGBDS) (optional)
 
 
