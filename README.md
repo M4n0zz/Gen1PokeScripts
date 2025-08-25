@@ -12,9 +12,10 @@ They are designed to either be run using TimoVM’s Nickname Writer or to be ins
 
 
 ### Requirements
-- A Gen 1 English Pokémon ROM or cartridge
-- An emulator like BGB or an actual Gameboy
-- [TimOS](https://glitchcity.wiki/wiki/Guides:TimoVM%27s_gen_1_ACE_setups) latest version
+- An Gameboy emulator (BGB recommended) or an actual console
+- A Gen 1 English Pokémon ROM or original cartridge
+- [TimoVM's ACE](https://glitchcity.wiki/wiki/Guides:TimoVM%27s_gen_1_ACE_setups) setup
+- [TimOS](https://glitchcity.wiki/wiki/Guides:Nickname_Writer_Codes) latest version (for permanent script installation)
 - [QuickRGBDS](https://github.com/M4n0zz/QuickRGBDS) (optional)
 
 
