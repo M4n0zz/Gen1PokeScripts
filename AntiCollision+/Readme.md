@@ -1,4 +1,4 @@
-# ➝🧱 AntiCollision+
+# 🧱 AntiCollision+
 
 This script activates the ability to walk through walls safely, without crashing the game if you try to go beyond map borders!
 
@@ -22,3 +22,4 @@ This constantly monitors for changes to the Map Script Pointer and re-applies th
 Map Script Hijack
 
 This always checks the current tile based on the map’s width and height. If an edge tile is detected, it then checks the player’s button presses. If the player is attempting to move outside the area, collisions are re-enabled, except in cases where there is a map connection, which is generally a crash-free scenario.
+
