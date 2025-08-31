@@ -16,10 +16,10 @@ Use with caution!
 
 The effect is achieved using an OAM DMA and a Map Script Pointer hijack, which keeps the payload running constantly in the background.
 
-OAM DMA Hijack
-This constantly monitors for changes to the Map Script Pointer and re-applies the hijack whenever needed.
+<p>OAM DMA Hijack</p>
+It constantly monitors for changes to the Map Script Pointer and re-applies the hijack whenever needed.
+<p></p>
+<p>Map Script Hijack</p>
+It always checks the current tile based on the map’s width and height. If an edge tile is detected, it then checks the player’s button presses. If the player is attempting to move outside the area, collisions are re-enabled, except in cases where there is a map connection, which is generally a crash-free scenario.
 
-Map Script Hijack
-
-This always checks the current tile based on the map’s width and height. If an edge tile is detected, it then checks the player’s button presses. If the player is attempting to move outside the area, collisions are re-enabled, except in cases where there is a map connection, which is generally a crash-free scenario.
 
