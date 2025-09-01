@@ -2,6 +2,8 @@
 
 This script activates the ability to walk through walls safely, without crashing the game if you try to go beyond map borders!
 
+# ![preview](AntiCollision+.jpg)
+
 Usage
 - Hold B Button to disable collision.
 - Release B Button to enable collision.
@@ -31,4 +33,5 @@ Usage
     <li>If a <strong> map edge tile</strong> is detected, the script looks for d-pad button presses.</li>
     <li>If the player attempts to move outside the map, <strong>collisions are re-enabled</strong>, except in case there is a <strong>map connection</strong>.</li>
   </ul>
+
 
