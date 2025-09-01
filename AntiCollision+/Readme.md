@@ -7,19 +7,28 @@ Usage
 - Release B Button to enable collision.
 
 ###  ⚠ Warnings:
-If you’re already using an OAM DMA hijack for something else, this payload will override it and break existing functionality.
-Also keep in mind that due to its nature, the script is not installable, meaning that it will stop working upon game reset. Furthermore, since temporary scripts reside in battle data area, the game will crash upon encountering a trainer.
-Use with caution!
+  <ul>
+    <li>If you are already using an <strong>OAM DMA hijack</strong> for another purpose, installing this payload will overwrite it and break any existing functionality.</li>
+    <li>Due to its nature, this script is <strong>temporary</strong> and cannot be permanently installed; it will stop working when the game is reset.</li>
+    <li>Temporary scripts use the <strong>battle data area</strong>, so the game will <strong>crash if you encounter a trainer</strong> while it is active.</li>
+  </ul>
+  <p><strong>Use with caution!</strong></p>
 
 -----
 ### Logic Behind the Hack
 
-The effect is achieved using an OAM DMA and a Map Script Pointer hijack, which keeps the payload running constantly in the background.
+  <p>The effect is achieved using both an <strong>OAM DMA hijack</strong> and a <strong>Map Script Pointer hijack</strong>, which keep the payload running constantly in the background.</p>
 
-<p>OAM DMA Hijack</p>
-It constantly monitors for changes to the Map Script Pointer and re-applies the hijack whenever needed.
-<p></p>
-<p>Map Script Hijack</p>
-It always checks the current tile based on the map’s width and height. If an edge tile is detected, it then checks the player’s button presses. If the player is attempting to move outside the area, collisions are re-enabled, except in cases where there is a map connection, which is generally a crash-free scenario.
+  <h3>OAM DMA Hijack</h3>
+  <ul>
+    <li>Continuously monitors for changes to the <strong>Map Script Pointer</strong>.</li>
+    <li>Re-applies the hijack whenever necessary to maintain functionality.</li>
+  </ul>
 
+  <h3>Map Script Hijack</h3>
+  <ul>
+    <li>Checks the <strong>current player's tile</strong> based on the map’s width and height.</li>
+    <li>If a <strong> map edge tile</strong> is detected, the script looks for d-pad button presses.</li>
+    <li>If the player attempts to move outside the map, <strong>collisions are re-enabled</strong>, except in case there is a <strong>map connection</strong>.</li>
+  </ul>
 
