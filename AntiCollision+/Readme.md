@@ -4,11 +4,11 @@ This script activates the ability to walk through walls safely, without crashing
 
 # ![preview](AntiCollision+.jpg)
 
-Usage
+###  Usage
 - Hold B Button to disable collision.
 - Release B Button to enable collision.
 
-###  ⚠ Warnings:
+###  ⚠ Warnings
   <ul>
     <li>If you are already using an <strong>OAM DMA hijack</strong> for another purpose, installing this payload will overwrite it and break any existing functionality.</li>
     <li>Due to its nature, this script is <strong>temporary</strong> and cannot be permanently installed; it will stop working when the game is reset.</li>
@@ -33,5 +33,6 @@ Usage
     <li>If a <strong> map edge tile</strong> is detected, the script looks for d-pad button presses.</li>
     <li>If the player attempts to move outside the map, <strong>collisions are re-enabled</strong>, except in case there is a <strong>map connection</strong>.</li>
   </ul>
+
 
 
