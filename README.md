@@ -27,7 +27,7 @@ Use [Nickname Converter](https://timovm.github.io/NicknameConverter/) to transla
 - $D8B4 for Pokémon Yellow
 
 2. **Run code:**
-Press Start in the nickname verification screen to run the code.
+After you insert the last code (leave it empty in case of direct copy and paste) press Start in the nickname verification screen to run the code.
 
 3. **Verify installation (installers only):**
 Open the script selector and run the last script on the list. If everything was successful, the total number of available scripts should have increased by one, and the installed script should run without any issues.
