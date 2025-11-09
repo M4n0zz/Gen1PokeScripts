@@ -6,10 +6,13 @@ Additionally, holding the A button makes the player move at extremely high speed
 
 The effect is achieved using an OAM DMA hijack, which keeps the payload running constantly in the background.
 
-###  ⚠ Warnings:
-If you’re already using an OAM DMA hijack for something else, this payload will override it and break existing functionality.
-Also keep in mind that due to its nature, the script is not installable, meaning that it will stop working upon game reset. Furthermore, since temporary scripts reside in battle data area, the game will crash upon encountering a trainer.
- Use with caution!
+###  ⚠ Warnings
+  <ul>
+    <li>If you are already using an <strong>OAM DMA hijack</strong> for another purpose, installing this payload will overwrite it and break any existing functionality.</li>
+    <li>Due to its nature, this script is <strong>temporary</strong> and cannot be permanently installed; it will stop working when the game is reset.</li>
+    <li>Temporary scripts use the <strong>battle data area</strong>, so the game will <strong>crash if you encounter a trainer</strong> while it is active.</li>
+  </ul>
+  <p><strong>Use with caution!</strong></p>
 
 -----
 ### Logic Behind the Hack
@@ -27,5 +30,6 @@ Here's how it works:
 - Once the payload runs, it then returns to the main game loop — but skips one additional Overworld delay, effectively increasing the overall speed.
 
 This technique allows the payload to run at exactly the right time, seamlessly blending with the game's natural flow and making frame-based manipulations like speeding up movement possible without crashing or interfering with unrelated logic.
+
 
 
