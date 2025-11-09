@@ -32,4 +32,6 @@ After you insert the last nickname code (or just press start in case of direct h
 3. **Verify (installers only):**
 Open the script selector and run the last script on the list. If everything was successful, the total number of available scripts should have increased by one, and the installed script should run without any issues.
 
-Warning: Since script selector offers a limited amount of space, not every installable script can fit inside. Thus, every script will be saved on top of the previous one, unless you manually change its installation address inside .asm file and recompile it. To avoid this issue and get access in every script at any point, BBMenus is about to be released soon. Stay tuned!
+
+###  ⚠ Warning
+Since script selector offers a **limited amount of space**, not every installable script can fit inside. Thus, every script will be saved on top of the previous one, unless you manually change its installation address inside .asm file and recompile it. To avoid this issue and get access in every script at any point, [BBMenus](https://github.com/M4n0zz/BBMenu) is released!
