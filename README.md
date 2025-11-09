@@ -34,4 +34,4 @@ Open the script selector and run the last script on the list. If everything was 
 
 
 ###  ⚠ Warning
-Since script selector offers a **limited amount of space**, not every installable script can fit inside. Thus, every script will be saved on top of the previous one, unless you manually change its installation address inside .asm file and recompile it. To avoid this issue and get access in every script at any point, [BBMenus](https://github.com/M4n0zz/BBMenu) is released!
+Since the script selector has **limited space**, not all installable scripts can fit at the same time. This means that installing a new script usually overwrites the previous one, unless you manually change the installation address in the .asm file and recompile it. To solve this and allow access to every script at any moment, [BBMenu](https://github.com/M4n0zz/BBMenu) is now available.
