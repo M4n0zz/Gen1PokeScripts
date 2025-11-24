@@ -3,6 +3,8 @@
 
 A template for building a **custom in-game script menu**.
 
+# ![preview](CustomMenu.png)
+
 ### ✔ Features
 
 * Keep multiple scripts organized in a single menu
@@ -40,3 +42,4 @@ You also need to adjust:
 
 * **Do NOT use this DMA hijack together with [BBMenu](https://github.com/M4n0zz/BBMenu).**
   BBMenu already relies on its own DMA hijack, and overwriting it will cause conflicts and break functionality.
+
