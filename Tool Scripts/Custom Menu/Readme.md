@@ -26,8 +26,8 @@ Perfect for long-term use.
 ## How to Modify
 
 1. Edit the `listitems` count in the correct .asm file.
-2. Replace the script labels and addresses with your own ones.
-3. Compile everything using **QuickRGBDS**.
+2. Replace the script labels and addresses at the end of the script with your own ones.
+3. Compile everything using **[QuickRGBDS](https://github.com/M4n0zz/QuickRGBDS)**.
 
 
 ---
@@ -39,5 +39,6 @@ Perfect for long-term use.
 
 * **Do NOT use this DMA hijack together with [BBMenu](https://github.com/M4n0zz/BBMenu).**
   BBMenu already relies on its own DMA hijack, and overwriting it will cause conflicts and break functionality.
+
 
 
