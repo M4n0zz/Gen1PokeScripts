@@ -8,6 +8,9 @@ This script activates the ability to walk through walls safely, without crashing
 - Hold B Button to disable collision.
 - Release B Button to enable collision.
 
+###  Installation
+- First install Nickwriter Migration script. Since the main script is big enough, we need to free up some space, so wemove Nickname Writer inside the script selector.
+- Second install AntiCollision+ TimOS. As the name say, the script is only compatible with TimOS installation, so don't try to use it without it!
 
 
 ###  ⚠ Warnings
@@ -35,6 +38,7 @@ This script activates the ability to walk through walls safely, without crashing
     <li>If the player attempts to move outside the map, <strong>collisions are re-enabled and all tiles become non walkable</strong>, except in case there is a <strong>map connection</strong>, so the transition can normally happen.</li>
     <li>If <strong>Button B</strong> is detected in any other spot, collision is fully disabled until button is released again.</li>
   </ul>
+
 
 
 
