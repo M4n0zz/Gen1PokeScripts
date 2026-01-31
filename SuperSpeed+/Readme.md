@@ -4,11 +4,9 @@ This script doubles the speed of all Overworld activity while it’s active.
 
 Additionally, holding button A makes the player move at extremely high speed — similar to the fast-forward feature in emulators.
 
-The effect is achieved using an OAM DMA hijack, which keeps the payload running constantly in the background.
-
 ###  ⚠ Warnings
   <ul>
-    <li>If you are already using an <strong>OAM DMA hijack</strong> for another purpose, installing this payload will overwrite it and break any existing functionality.</li>
+    <li>The effect is achieved using an OAM DMA hijack, which keeps the payload running constantly in the background. If you are already using the hijack, installing this payload will overwrite it and break any existing functionality.</li>
     <li>Due to its nature, this script cannot survive a game reset. You will need to activate it again.</li>
   </ul>
 
@@ -30,6 +28,7 @@ Here's how it works:
 - Once the payload runs, it then returns to the main game loop — but skips one additional Overworld delay, effectively increasing the overall speed. 
 
 This technique allows the payload to run at exactly the right time, seamlessly blending with the game's natural flow and making frame-based manipulations like speeding up movement possible without crashing or interfering with unrelated logic.
+
 
 
 
