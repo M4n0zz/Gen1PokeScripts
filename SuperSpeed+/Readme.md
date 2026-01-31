@@ -13,7 +13,7 @@ Additionally, holding button A makes the player move at extremely high speed —
 -----
 ### Logic Behind the Hack
 
-This bug-free hack works by monitoring a specific stack address during the OAM DMA hijack.
+This bug-free script uses OAM DMA and Stack hijacks.
 
 Here's how it works:
 
@@ -28,6 +28,7 @@ Here's how it works:
 - Once the payload runs, it then returns to the main game loop — but skips one additional Overworld delay, effectively increasing the overall speed. 
 
 This technique allows the payload to run at exactly the right time, seamlessly blending with the game's natural flow and making frame-based manipulations like speeding up movement possible without crashing or interfering with unrelated logic.
+
 
 
 
