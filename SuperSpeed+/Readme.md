@@ -13,7 +13,7 @@ Additionally, holding button A makes the player move at extremely high speed —
 -----
 ### Logic Behind the Hack
 
-The effect is achieved using an <strong>OAM DMA hijack</strong> and a <strong>Stack hijack</strong>, both used to keep the payload running constantly in the background.
+  <p>The effect is achieved using an <strong>OAM DMA hijack</strong>, responsible for running the payload constantly in the background, chained with a <strong>Stack hijack</strong>, that injects and syncronizes payload execution with overworld activity.</p>
 
 Here's how it works:
 
@@ -28,6 +28,7 @@ Here's how it works:
 - Once the payload runs, it then returns to the main game loop — but skips one additional Overworld delay, effectively increasing the overall speed. 
 
 This technique allows the payload to run at exactly the right time, seamlessly blending with the game's natural flow and making frame-based manipulations like speeding up movement possible without crashing or interfering with unrelated logic.
+
 
 
 
