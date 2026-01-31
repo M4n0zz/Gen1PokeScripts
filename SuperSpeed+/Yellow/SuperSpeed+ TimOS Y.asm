@@ -12,7 +12,7 @@ include "pokeyellow.inc"
 def stackreturnaddress        = OverworldLoopLessDelay   
 def returnaddress             = OverworldLoopLessDelay+3
 def hardcodedbankswitch3f     = $1001
-def timospointers             = $c7c7
+def timospointers             = $c7c0
 def timosinstalladr           = $c841
 def nickwriteraddress         = $d8b4
 def topstack                  = $df15
@@ -122,3 +122,4 @@ jr   .loop
 
 finish:
 ENDL
+
