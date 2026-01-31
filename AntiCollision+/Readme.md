@@ -20,20 +20,22 @@ This script activates the ability to walk through walls safely, without crashing
 -----
 ### Logic Behind the Hack
 
-  <p>The effect is achieved using both an <strong>OAM DMA hijack</strong> and a <strong>Map Script Pointer hijack</strong>, which keep the payload running constantly in the background.</p>
+  <p>The effect is achieved using an <strong>OAM DMA hijack</strong>, responsible for running the payload constantly in the background, chained with a <strong>Stack hijack</strong>, that injects and syncronizes payload execution with overworld activity.</p>
 
   <h3>OAM DMA Hijack</h3>
   <ul>
-    <li>Continuously monitors for changes to the <strong>Map Script Pointer</strong>.</li>
-    <li>Re-applies the hijack whenever necessary to maintain functionality.</li>
+    <li>Continuously runs the <strong>Stack hijack</strong> inspection payload.</li>
+    <li>If specific address is found in specific stack address, it gets replaced with stack payload's one.</li>
   </ul>
 
-  <h3>Map Script Hijack</h3>
+  <h3>Stack Hijack</h3>
   <ul>
     <li>Checks the <strong>current player's tile</strong> based on the map’s width and height.</li>
     <li>If a <strong> map edge tile</strong> is detected, the script looks for d-pad button presses.</li>
-    <li>If the player attempts to move outside the map, <strong>collisions are re-enabled</strong>, except in case there is a <strong>map connection</strong>.</li>
+    <li>If the player attempts to move outside the map, <strong>collisions are re-enabled and all tiles become non walkable</strong>, except in case there is a <strong>map connection</strong>, so the transition can normally happen.</li>
+    <li>If <strong>Button B</strong> is detected in any other spot, collision is fully disabled until button is released again.</li>
   </ul>
+
 
 
 
