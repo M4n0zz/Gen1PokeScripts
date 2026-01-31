@@ -1,22 +1,21 @@
 # ACE Scripts for English Pokémon Red, Blue and Yellow
 
-This repository contains my collection of Arbitrary Code Execution scripts for Pokémon Generation 1 games (Red, Blue, Yellow).
-They are designed to either run using TimoVM’s Nickname Writer or to be installed with it inside TimOS environment.
+This repository contains my collection of Arbitrary Code Execution scripts for Pokémon Generation 1 games.
+They are designed to either run using TimoVM’s Nickname Writer or to be installed with it inside TimOS script selector for persistency.
 
 ----
 ### Features
 
-- Ready-to-install HEX payloads
-- Compatible with original cartridges, VC and emulators
-- Assembly source code for learning and customization purposes
+- Ready-to-install HEX payloads, compatible with original cartridges, VC and emulators
+- Assembly RGBDS source code for learning and customization purposes
 
 
 ### Requirements
-- A Gameboy emulator (BGB recommended) or an actual console
-- A Gen 1 English Pokémon ROM or original cartridge
+- A Gameboy console or an accurate emulator (BGB recommended)
+- A Gen 1 English Pokémon authentic cartridge or an original ROM
 - [TimoVM's ACE](https://glitchcity.wiki/wiki/Guides:TimoVM%27s_gen_1_ACE_setups) setup
 - [TimOS](https://glitchcity.wiki/wiki/Guides:Nickname_Writer_Codes) latest version (for permanent script installation)
-- [QuickRGBDS](https://github.com/M4n0zz/QuickRGBDS) (optional)
+- [QuickRGBDS](https://github.com/M4n0zz/QuickRGBDS) (in case you want to adjust the scripts and recompile them)
 
 
 ### How to run the payloads
