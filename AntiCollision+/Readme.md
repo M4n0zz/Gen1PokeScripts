@@ -8,13 +8,14 @@ This script activates the ability to walk through walls safely, without crashing
 - Hold B Button to disable collision.
 - Release B Button to enable collision.
 
+
+
 ###  ⚠ Warnings
   <ul>
-    <li>If you are already using an <strong>OAM DMA hijack</strong> for another purpose, installing this payload will overwrite it and break any existing functionality.</li>
-    <li>Due to its nature, this script is <strong>temporary</strong> and cannot be permanently installed; it will stop working when the game is reset.</li>
-    <li>Temporary scripts use the <strong>battle data area</strong>, so the game will <strong>crash if you encounter a trainer</strong> while it is active.</li>
+    <li>The effect is achieved using an OAM DMA hijack, which keeps the payload running constantly in the background. If you are already using the hijack, installing this payload will overwrite it and break any existing functionality.</li>
+    <li>Due to its nature, this script cannot survive a game reset. You will need to activate it again.</li>
+    <li>Although the script blocks movement beyond the map borders, switching maps can still result in invalid coordinates. This may cause graphical issues or even crash the game if the character ends up too far outside the map. <strong>Use with caution!</strong></li>
   </ul>
-  <p><strong>Use with caution!</strong></p>
 
 -----
 ### Logic Behind the Hack
@@ -33,6 +34,7 @@ This script activates the ability to walk through walls safely, without crashing
     <li>If a <strong> map edge tile</strong> is detected, the script looks for d-pad button presses.</li>
     <li>If the player attempts to move outside the map, <strong>collisions are re-enabled</strong>, except in case there is a <strong>map connection</strong>.</li>
   </ul>
+
 
 
 
