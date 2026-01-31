@@ -33,4 +33,4 @@ Open the script selector and run the last script on the list. If everything was 
 
 
 ###  ⚠ Warning
-Since the script selector has **limited space**, not all installable scripts can fit at the same time. This means that installing a new script usually overwrites the previous one, unless you manually change the installation address in the .asm file and recompile it. To solve this and allow access to every script at any moment, [BBMenu](https://github.com/M4n0zz/BBMenu) is now available.
+Since the script selector has **limited space**, not all installable scripts can fit at the same time. This means that installing a new script usually overwrites the previous one, unless you manually change the installation address in the .asm file and recompile it. To solve this and get access to every script at any moment in the game, [BBMenu](https://github.com/M4n0zz/BBMenu) is now available.
