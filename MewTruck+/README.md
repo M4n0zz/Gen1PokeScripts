@@ -4,7 +4,7 @@ Finally, the urban legend of Mew under the truck refreshed and accessible for ev
 
 # ![preview](mewtruck+.png)
 
-MewTruck+ introduces an event when the player is able to push the truck located inside Vermillion Harbor.
+MewTruck+ introduces an event where the player is able to push the truck located inside Vermillion Harbor.
 
 Prerequisites
 - Ability to use Surf and Strength.
@@ -12,7 +12,7 @@ Prerequisites
 
 Script activation
 - In order to activate the script, you must already be inside Vermillion Harbor, otherwise the script will self abort.
-- After you activate the script activate Strength and push the truck. Voila!
+- After that activate Strength and push the truck. Voila!
 
 
 ### ⚠️ Warning
