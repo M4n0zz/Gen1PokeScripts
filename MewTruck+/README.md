@@ -4,14 +4,14 @@ Finally, the urban legend of Mew under the truck refreshed and accessible for ev
 
 # ![preview](mewtruck+.png)
 
-MewTruck+ introduces an event where the player is able to push the truck located inside Vermillion Harbor.
+MewTruck+ introduces an event where the player is able to push the truck located inside Vermilion Harbor.
 
 Prerequisites
 - Ability to use Surf and Strength.
-- Access to Vermillion Harbor. If S.S.Anne has already left, you can use [surf down glitch](https://glitchcity.wiki/wiki/Surf_down_glitch) to re-enter the area.
+- Access to Vermilion Harbor. If S.S.Anne has already left, you can use [surf down glitch](https://glitchcity.wiki/wiki/Surf_down_glitch) to re-enter the area.
 
 Script activation
-- In order to activate the script, you must already be inside Vermillion Harbor, otherwise the script will self abort.
+- In order to activate the script, you must already be inside the harbor, otherwise the script will self abort.
 - After that activate Strength and push the truck. Voila!
 
 
