@@ -27,3 +27,6 @@ Choose the format that best fits your setup:
 - Installer Version: Permanently installs MewTruck+ at a specific memory address within the Script Selector.
 Perfect for long-term use.
 - Standalone Version: A temporary version that can run until a trainer battle starts. Great for single session or testing.
+
+-----
+Special thanks to [luckytyphlosion](https://pastebin.com/6VWNfEKG) and [MrCheeze](https://pastebin.com/8PAxHSVv) for their versions of the script and the [write-up](https://pastebin.com/UqRzNKxm), which served as the foundation for creating this new one.
