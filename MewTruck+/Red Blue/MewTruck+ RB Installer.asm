@@ -9,7 +9,7 @@ def romtrucktiles   = $69d0
 def truckids        = $6c20
 def mewsprite       = $80c0
 def scriptnumaddr   = $c6e9
-def timospointers   = $c7cb
+def timospointers   = $c7c7
 def installaddress  = $c9ce
 def nickaddress     = $d8b5
 def script          = $52
@@ -26,15 +26,19 @@ LOAD "Installer", WRAMX[nickaddress]
 installer:
 ; increse no of scripts
 ld   hl, scriptnumaddr
+ld   a, [hl]
 inc  [hl]
+add  a, a
 ld   hl, timospointers             ; start counting from script #1
-ld   [hl], low(copy)
+ld   de, installaddress
+add  a, l
+ld   l, a
+ld   [hl], e
 inc  hl
-ld   [hl], high(copy)
+ld   [hl], d
 
 ; Copy payloads
 ld   bc, endcopy - copy + endscript - start
-ld   de, installaddress
 ld   hl, installerend
 jp   CopyData
 
