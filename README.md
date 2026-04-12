@@ -33,6 +33,6 @@ Open the script selector and run the last script on the list. If everything was 
 
 
 ###  ⚠ Warning
-The script selector has **limited space**, so it can’t hold all installable scripts at once. As a result, installing a new script usually replaces the previous one—unless you manually change the installation address in the .asm file and recompile it.
+The script selector has **limited space**, so it can’t hold all installable scripts at once. As a result, installing a new script usually replaces the previous one, unless you manually change the installation address in the .asm file and recompile it.
 
 To fix this and give you access to almost every script at any time during the game, [BBMenu](https://github.com/M4n0zz/BBMenu) is now available.
