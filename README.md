@@ -1,6 +1,6 @@
 # ACE Scripts for English Pokémon Red, Blue and Yellow
 
-This repository contains my collection of Arbitrary Code Execution scripts for Pokémon Generation 1 games.
+This repository contains my collection of [Arbitrary Code Execution](https://glitchcity.wiki/wiki/Arbitrary_code_execution) scripts for Pokémon Generation 1 games.
 They are designed to either run using TimoVM’s Nickname Writer or to be installed with it inside TimOS script selector for persistency.
 
 ----
