@@ -1,0 +1,16 @@
+# 🧱 Tetris
+
+A simple Tetris mini-game with enhanced gameplay based on the original Gameboy Tetris game.
+Designed for fun and seamless integration in Gen 1 games.
+# ![preview](Tetris.png)
+
+### Features
+
+- Refined controls for natural and reliable gameplay
+
+
+----
+### Installation
+
+This script is available via installation in TimOS environment only and it consists of 2 parts, to be installed with the correct order.
+
