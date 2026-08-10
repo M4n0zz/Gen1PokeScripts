@@ -1,7 +1,6 @@
-; Address and function names replaced from pokegreen v1.1
-
 
 /*
+Address and function names replaced from pokegreen v1.1
 
 Source is compiled with QuickRGBDS
 https://github.com/M4n0zz/QuickRGBDS
