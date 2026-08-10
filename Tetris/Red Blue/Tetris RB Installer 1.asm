@@ -1,5 +1,3 @@
-; Tetris Minigame Z80 ASM (Reconstructed for Japanese Pokémon Green)
-; Decompiled and annotated by ChatGPT
 ; Address and function names replaced from pokegreen v1.1
 
 
