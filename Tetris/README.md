@@ -15,3 +15,5 @@ It is a port of offgao's tetris game, designed for fun and seamless integration 
 
 This script is available via installation in TimOS environment only and it consists of 2 parts, to be installed with the correct order.
 
+Follow the instruction in the [main page](https://github.com/M4n0zz/Gen1PokeScripts) of the repo.
+
