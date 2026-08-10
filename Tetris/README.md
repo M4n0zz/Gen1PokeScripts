@@ -1,7 +1,8 @@
 # 🧱 Tetris
 
 A simple Tetris mini-game with enhanced gameplay based on the original Gameboy Tetris game.
-Designed for fun and seamless integration in Gen 1 games.
+
+It is a port of offgao's tetris game, designed for fun and seamless integration in Gen 1 games.
 # ![preview](Tetris.png)
 
 ### Features
