@@ -14,7 +14,7 @@ It is a port of offgao's Tetris, designed to integrate seamlessly with ACE.
 ----
 ### Installation
 
-Due to its size, the payload is split into two parts and is designed to be used with TimOS Script Selector.
+Due to its size, the payload is split into two parts and is designed exclusively for use with TimOS Script Selector.
 
 Please follow the instruction in the [main page](https://github.com/M4n0zz/Gen1PokeScripts) of this repo.
 
