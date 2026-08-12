@@ -8,7 +8,7 @@ It is a port of offgao's Tetris, designed to integrate seamlessly with ACE.
 ### Features
 
 - Refined controls for natural and reliable gameplay
--Line counter, high score, increasing game speed, and next-piece preview to be added!
+- Line counter, high score, increasing game speed, and next-piece preview TO BE ADDED!
 
 
 ----
