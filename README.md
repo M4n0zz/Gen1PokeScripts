@@ -22,8 +22,8 @@ They are designed to either run using TimoVM’s Nickname Writer or to be instal
 
 1. **Insert code:**
 Use [Nickname Converter](https://timovm.github.io/NicknameConverter/) to translate the hex payload into nickname codes, then [Nickname Writer](https://glitchcity.wiki/wiki/Guides:Nickname_Writer_Codes) to inject them. Alternatively, if using a compatible emulator, just open Nickname Writer and paste the hex code directly into the appropriate memory address:
-- $D8B5 for Pokémon Red & Blue
-- $D8B4 for Pokémon Yellow
+- ``$D8B5`` for Pokémon Red & Blue
+- ``$D8B4`` for Pokémon Yellow
 
 2. **Run code:**
 After you insert the last nickname code (or just press start in case of direct hex paste) press Start again in the nickname verification screen to run it. If everything was correct the script will run without any issues. In case of an installer, the installation will be done and you will get back to items menu.
@@ -33,6 +33,6 @@ Open the script selector and run the last script on the list. If everything was 
 
 
 ###  ⚠ Warning
-The script selector has **limited space**, so it can’t hold all installable scripts at once. As a result, installing a new script usually replaces the previous one, unless you manually change the installation address in the .asm file and recompile it.
+The script selector has **limited space**, so it can’t hold all installable scripts at once. As a result, installing a new script usually replaces the previous one, unless you manually change the installation address in the ``.asm`` file and recompile it.
 
-To fix this and give you access to almost every script at any time during the game, [BBMenu](https://github.com/M4n0zz/BBMenu) is now available.
+To solve this and give you access to almost every script at any time during the game, [BBMenu](https://github.com/M4n0zz/BBMenu) is here!
