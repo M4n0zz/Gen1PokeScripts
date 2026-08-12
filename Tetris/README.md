@@ -18,3 +18,7 @@ Due to its size, the payload is split into two parts and is designed exclusively
 
 Please follow the instruction in the [main page](https://github.com/M4n0zz/Gen1PokeScripts) of this repo.
 
+----
+### Note
+
+In case you manually move the payloads within the memory region, make sure that Part 1 is always installed at an address with a low nibble of ``$00``. This is tied to the fundamental logic of Tetris tetromino creation, and if the address is changed, the tetromino shapes can be hilariously distorted!
