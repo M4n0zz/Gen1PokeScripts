@@ -1,19 +1,20 @@
 # 🧱 Tetris
 
-A simple Tetris mini-game with enhanced gameplay based on the original Gameboy Tetris game.
+A simple Tetris mini-game with enhanced gameplay inspired by the original Game Boy Tetris.
 
-It is a port of offgao's tetris game, designed for fun and seamless integration in Gen 1 games.
+It is a port of offgao's Tetris, designed to integrate seamlessly with ACE.
 # ![preview](Tetris.png)
 
 ### Features
 
 - Refined controls for natural and reliable gameplay
+-Line counter, high score, increasing game speed, and next-piece preview to be added!
 
 
 ----
 ### Installation
 
-This script is available via installation in TimOS environment only and it consists of 2 parts, to be installed with the correct order.
+Due to its size, the payload is split into two parts and is designed to be used with TimOS Script Selector.
 
-Follow the instruction in the [main page](https://github.com/M4n0zz/Gen1PokeScripts) of the repo.
+Please follow the instruction in the [main page](https://github.com/M4n0zz/Gen1PokeScripts) of this repo.
 
