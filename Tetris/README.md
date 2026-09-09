@@ -1,6 +1,8 @@
 # 🧱 Tetris
 
-A simple Tetris mini-game inspired by the original Game Boy version. Based on offgao’s work, with refined controls for smooth and responsive gameplay, it is designed to integrate seamlessly with ACE.
+A simple Tetris mini-game inspired by the original Game Boy version.
+
+Based on offgao’s work, with refined controls for smooth and responsive gameplay, it is designed to integrate seamlessly with ACE.
 
 # ![preview](Tetris.png)
 
