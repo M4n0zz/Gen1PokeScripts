@@ -11,7 +11,7 @@ Based on offgao’s work, it is designed to integrate seamlessly with ACE, with 
 * **Original control implementation** for smooth and responsive gameplay.
 * **Enhanced graphics** — now it actually looks like a proper Tetris game.
 * **Next block** — shows the upcomming block
-* **Pause menu** — so you don't have to lose your game when your GF asks you something.
+* **Game pause** — so you don't have to lose your game when your GF asks you something.
 * **Speed mode** — the speed increases every 16 lines, making the game progressively more challenging.
 * **Score counters** — show me your high scores!
 
