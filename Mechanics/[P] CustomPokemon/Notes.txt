@@ -1,0 +1,29 @@
+To create a custom sprite you need to:
+1) Manually make a 32x32 png image for back sprites or 56x56 png for front sprites.
+2) Make the images to use maximum 4 different colors.
+- To do so find a proper image, modify contrast etc, resize, save as 16 color bmp in paint, manually correct pixel colors to total of 4 and finally save as png.
+3) Set correct location and names in convert.bat from rgds (v0.3.1 only since later dont support -h and have problems).
+4) Move the converted .2bpp file in pkmncompress -> input folder, modify the "input/*.2bpp" in .bat again and run it.
+5) Open the .pic file in output folder with HxD and copy-paste the hex data to the corresponding location.
+
+Update
+You can skip steps 3 and 4 by just using the online tool at https://rgmechex.com/tech/gen1decompress.html
+Just upload the image in the Compress section and download the smaller file of the 6 encode modes!
+
+Pokemon Yellow
+Use glitch pokemon 0xE6 which loads its back sprite from address DAC9 (pokemon #2 data in PC box).
+If you save the game, sprite persists, but your deposited pokemon data is destroyed (slots 2++).
+You can save sprites data in an unused box and load it back when you want.
+
+Insert sprite hex code by copy paste in an emulator or using a RAM Writer on actual hardware.
+You can get E6 pokemon using the Nickname code below:
+01 46 E6 C3 59 3E
+
+Make sure you give it a nickname to avoid displaying glitchytext.
+After swapping E6 in party #1 you can:
+- Change its movesets in order to properly use it in battles:
+01 04 00 11 72 D1 21 C0 D8 C3 B1 00 5E 25 5F 8A
+- Change its types, so you can take advantage of the above moveset:
+01 18 18 21 6F D1 71 23 70 C9
+
+
