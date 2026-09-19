@@ -1,0 +1,21 @@
+/*
+
+Source is compiled with QuickRGBDS
+https://github.com/M4n0zz/QuickRGBDS
+
+*/
+
+include "pokeyellow.inc"
+
+
+SECTION "instako", ROM0
+
+
+nodamage:
+ld   hl, wEnemyMonHP
+xor  a
+ld   [hli], a
+ld   [hl], a
+ret
+
+
