@@ -38,3 +38,9 @@ f3 21 80 ff 36 cd 23 36 c4 23
 36 d8 23 36 e2 fb cd cc d8 0e  
 46 3e c3 c9 c9
 </pre>
+
+**DMA Unloader**
+<pre style="font-family: monospace;">
+f3 21 80 ff 36 3e 23 36 c3 23  
+36 e0 23 36 46 d9
+</pre>
