@@ -1,29 +1,44 @@
 # ACE Scripts for English Pokémon Red, Blue and Yellow
 
-This repository contains my collection of [Arbitrary Code Execution](https://glitchcity.wiki/wiki/Arbitrary_code_execution) scripts for Pokémon Generation 1 games.
-They are designed to either run using TimoVM’s Nickname Writer or to be installed with it inside TimOS script selector for persistency.
+This repository contains my collection of ACE scripts for Pokémon Generation 1 games.
+The scripts are designed to either run using TimoVM’s Nickname Writer, or to be installed with it into TimOS’s script selector for persistent use.
 
 ----
-### Features
+### Categories
 
-- Ready-to-install HEX payloads, compatible with original cartridges, VC and emulators
-- Assembly RGBDS source code for learning and customization purposes
+- **Effects:** Scripts that perform a specific action in the game.
+- **Events:** Custom events that occur in specific map areas.
+- **Mechanics:** Scripts that run continuously in the backround and add a new game behavior.
+- **Minigames:** No explanation needed here. Show me your highscores! :)
+- **Tools:** Scripts and utilities that help developers build, test or debug other scripts and game features!
+
+### Prefixes
+- **[P] Premium:** High-quality scripts designed to make the game simpler and more consistent — a must-have!
+- **[B] Basic:** Medium scaled scripts that add extra functionality to the game.
+- **[M] Minimal:** Simple scripts that use only a few nicknames, ideal for quick tasks or learning purposes.
+
+Note: Scripts marked with a + symbol are fully debugged and considered stable.
+
+### Components
+
+- **Ready-to-install HEX payloads**, compatible with original cartridges, Virtual Console, and emulators.
+- **Assembly source code written for (Quick)RGBDS**, intended for learning and customization.
 
 
 ### Requirements
-- A Gameboy console or an accurate emulator (BGB recommended)
-- A Gen 1 English Pokémon authentic cartridge or an original ROM
-- [TimoVM's ACE](https://glitchcity.wiki/wiki/Guides:TimoVM%27s_gen_1_ACE_setups) setup
-- [TimOS](https://glitchcity.wiki/wiki/Guides:Nickname_Writer_Codes) latest version (for permanent script installation)
-- [QuickRGBDS](https://github.com/M4n0zz/QuickRGBDS) (in case you want to adjust the scripts and recompile them)
+- A Gameboy console or an accurate emulator (BGB recommended).
+- A Gen 1 English Pokémon authentic cartridge or an original ROM.
+- [TimoVM's ACE](https://glitchcity.wiki/wiki/Guides:TimoVM%27s_gen_1_ACE_setups) setup.
+- [TimOS](https://glitchcity.wiki/wiki/Guides:Nickname_Writer_Codes) latest version (for permanent script installation).
+- [QuickRGBDS](https://github.com/M4n0zz/QuickRGBDS) (in case you want to adjust the scripts and recompile them).
 
 
 ### How to run the payloads
 
 1. **Insert code:**
 Use [Nickname Converter](https://timovm.github.io/NicknameConverter/) to translate the hex payload into nickname codes, then [Nickname Writer](https://glitchcity.wiki/wiki/Guides:Nickname_Writer_Codes) to inject them. Alternatively, if using a compatible emulator, just open Nickname Writer and paste the hex code directly into the appropriate memory address:
-- ``$D8B5`` for Pokémon Red & Blue
-- ``$D8B4`` for Pokémon Yellow
+- $D8B5 for Pokémon Red & Blue
+- $D8B4 for Pokémon Yellow
 
 2. **Run code:**
 After you insert the last nickname code (or just press start in case of direct hex paste) press Start again in the nickname verification screen to run it. If everything was correct the script will run without any issues. In case of an installer, the installation will be done and you will get back to items menu.
@@ -33,6 +48,4 @@ Open the script selector and run the last script on the list. If everything was 
 
 
 ###  ⚠ Warning
-The script selector has **limited space**, so it can’t hold all installable scripts at once. As a result, installing a new script usually replaces the previous one, unless you manually change the installation address in the ``.asm`` file and recompile it.
-
-To solve this and give you access to almost every script at any time during the game, [BBMenu](https://github.com/M4n0zz/BBMenu) is here!
+Since the script selector has **limited space**, not all installable scripts can fit at the same time. This means that installing a new script usually overwrites the previous one, unless you manually change the installation address in the .asm file and recompile it. To solve this and get access to every script at any moment in the game, [BBMenu](https://github.com/M4n0zz/BBMenu) is now available.
