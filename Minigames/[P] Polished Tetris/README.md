@@ -3,6 +3,9 @@
 
 A refined Tetris mini-game inspired by the original Game Boy version.
 
+
+# ![preview](Tetris.png)
+
 Based on offgao’s work, it is designed to integrate seamlessly with ACE, with the following additions:
 
 * **Original control implementation** for smooth and responsive gameplay.
@@ -12,7 +15,6 @@ Based on offgao’s work, it is designed to integrate seamlessly with ACE, with 
 * **Speed mode** — the speed increases every 16 lines, making the game progressively more challenging.
 * **Score counters** — show me your high scores!
 
-# ![preview](Tetris.png)
 
 ---
 
