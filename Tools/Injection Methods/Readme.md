@@ -1,18 +1,18 @@
 ## Injection methods
 
 
-This directory contains scripts that are not directly usable by the user. Instead, they provide the tools and techniques needed to achieve specific effects, such as **background code execution, game functionality customization, and other advanced game modifications**
+This directory contains scripts that are not directly usable by the user. Instead, they provide the tools and techniques needed to achieve specific effects, such as **background code execution, game functionality customization, and other advanced game modifications**.
 
 ---
 
-## ACE Logic
+### ACE Logic
 
 To run a script, two things are needed:
 
-1. **A way to write code into a specific memory location**
-2. **A way to execute code from that memory location**
+1. A way to write code into a specific memory location
+2. A way to execute code from that memory location
 
-### 1. Writing Code to Memory
+**1. Writing Code to Memory**
 
 Several methods have been developed over the years. The most common are:
 
@@ -20,7 +20,7 @@ Several methods have been developed over the years. The most common are:
 * **Nickname Writers:** Hex payloads are converted into Pokémon nicknames, usually with the help of an external tool. This significantly reduces the number of button presses required. A checksum may also be used.
 * **D-Pad Writers:** Hex payloads are converted into sequences of D-Pad inputs, usually with the help of an external tool. Like Nickname Writers, this greatly reduces the number of inputs required. A checksum may also be used.
 
-### 2. Executing Code
+**2. Executing Code**
 
 There are many ways to execute code, most of which rely on game glitches.
 
@@ -28,7 +28,7 @@ A common approach is to use glitch items such as **4F, 8F, ws_m (Yellow only)**,
 
 ---
 
-## Constant Code Execution
+### Constant Code Execution
 
 Some scripts need to run continuously in the background. This can be used to create persistent effects, monitor memory, or modify the game's normal behavior.
 
@@ -41,7 +41,7 @@ Several methods can be used to repeatedly execute code:
 
 ---
 
-## Game Modification
+### Game Modification
 
 There are several ways to modify the game's original behavior:
 
