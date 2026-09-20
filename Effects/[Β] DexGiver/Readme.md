@@ -1,11 +1,12 @@
 
-##DexGiver
+## DexGiver
 
 A minimal script that gives you any non glitch Pokemon to any non glitch level
 
 # ![preview](dexgiver.png)
 
 **Warning**
+
 Trainer battle data is typically reused by the game.
 
 To work around this limitation, you can use **MultiScript installer** instead.
