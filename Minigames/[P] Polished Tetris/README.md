@@ -28,6 +28,6 @@ Please follow the instructions on the [main page](https://github.com/M4n0zz/Gen1
 
 ### Note
 
-The game will break if you try to move it in any address other than $c800.
+The game will break if you try to move the installation in any address other than $c800.
 
-The above address is tied to the fundamental logic of Tetris tetromino creation. If the address is changed, the tetromino shapes will be distorted!
+The above address is tied to the fundamental logic of Tetris tetromino creation. If it is changed, the tetromino shapes will be distorted!
