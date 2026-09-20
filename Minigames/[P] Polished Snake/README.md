@@ -18,7 +18,7 @@ Designed for fun, stability, and seamless integration in Gen 1 games.
 This script is available via installation in TimOS environment only, since it uses Nickname Writer's region to temporarily store Snake's internal buffer.
 
 
-**Red/Blue**
+**Red/Blue Installer**
 ```
 21 e9 c6 46 3e 01 86 77 11 c7 c7 1c 1c 05 20 fb 0e 02 21 d6  
 d8 cd b5 00 01 40 01 11 ce c9 c3 b5 00 d7 c9 3e a6 e1 cd b1  
@@ -40,7 +40,7 @@ cb 77 01 ec ff 20 0d cb 6f 48 20 08 cb 67 03 03 20 02 0e 14
 ae b1 a4 7f f6 7f 7f 7f 81 a4 b2 b3 7f 50 00
 ```
 
-**Yellow**
+**Yellow Installer**
 ```
 21 e9 c6 46 3e 01 86 77 11 c0 c7 1c 1c 05 20 fb 0e 02 21 d5  
 d8 cd b1 00 01 3e 01 11 ce c9 c3 b1 00 d7 c9 3e a6 e1 cd 38  
