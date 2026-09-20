@@ -38,24 +38,24 @@ If everything worked correctly, the total number of available scripts should hav
 
 
 **Red/Blue**
-<pre style="font-family: monospace;">
+```
 21 49 cb 3a fe ff 28 fb 23 23  
 7c fe c8 30 03 21 ff c7 ea ee  
 d8 7d ea ed d8 e5 21 e9 c6 46  
 3e 01 86 77 11 c7 c7 1c 1c 05  
 20 fb 0e 02 21 ed d8 cd 3a 12  
 0e <b>XX</b> d1 c3 3a 12 cc cc 
-</pre>
+```
 
 **Yellow**
-<pre style="font-family: monospace;">
+```
 21 49 cb 3a fe ff 28 fb 23 23  
 7c fe c8 30 03 21 ff c7 ea ed  
 d8 7d ea ec d8 e5 21 e9 c6 46  
 3e 01 86 77 11 c0 c7 1c 1c 05  
 20 fb 0e 02 21 ec d8 cd ac 0e  
 0e <b>XX</b> d1 c3 ac 0e cc cc 
-</pre>
+```
 -----
 
 **ASM Manual installer Instructions**
