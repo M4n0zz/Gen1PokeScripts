@@ -1,20 +1,9 @@
-<table>
-<tr>
-<td>
-
-<pre>
+| Code A | Code B |
+|---|---|
+| ```text
 01 20 FF 3E 05 CD 12 40
 C3 00 00 21 80 D3 36 01
-</pre>
-
-</td>
-<td>
-
-<pre>
+``` | ```text
 21 80 D3 36 01 CD 12 40
 3E 05 C3 00 00 AF 21 80
-</pre>
-
-</td>
-</tr>
-</table>
+``` |
