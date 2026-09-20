@@ -1,5 +1,7 @@
+## Injection methods
 
-**This directory contains scripts that are not directly usable by the user. Instead, they provide the tools and techniques needed to achieve specific effects, such as **background code execution, game functionality customization, and other advanced game modifications**
+
+This directory contains scripts that are not directly usable by the user. Instead, they provide the tools and techniques needed to achieve specific effects, such as **background code execution, game functionality customization, and other advanced game modifications**
 
 ---
 
