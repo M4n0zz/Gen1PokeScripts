@@ -6,7 +6,7 @@ https://github.com/M4n0zz/QuickRGBDS
 */
 
 
-include "pokeyellow.inc"
+include "pokered.inc"
 
 SECTION "ResetPokedex", ROM0
 
