@@ -12,7 +12,7 @@ Prerequisites
 
 Script activation
 - In order to activate the script, you must already be inside the harbor, otherwise the script will self abort.
-- After that activate Strength and push the truck. Voila!
+- After that, activate Strength and push the truck. Voila!
 
 
 ### ⚠️ Warning
