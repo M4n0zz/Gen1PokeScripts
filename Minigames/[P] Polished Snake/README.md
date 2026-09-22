@@ -15,8 +15,9 @@ Designed for fun, stability, and seamless integration in Gen 1 games.
 ----
 ### Installation
 
-This script is available via installation in TimOS environment only, since it uses Nickname Writer's region to temporarily store Snake's internal buffer.
+This script is available via installation in TimOS Script Selector only, since it uses Nickname Writer's region to temporarily store Snake's internal buffer.
 
+---
 
 **Red/Blue Installer**
 ```
