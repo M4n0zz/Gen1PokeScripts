@@ -4,7 +4,7 @@
 A Suite that includes the following scripts, all in a single installation!
 
 - ItemGiver
-- DexGiver
+- PokeGiver
 - LetsGetWild
 - HiTrainer
 - Poketeacher
