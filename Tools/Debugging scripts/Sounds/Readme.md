@@ -1,4 +1,5 @@
-Sound Tester
+
+## Sound Tester
 
 A simple script to help you debug every game sound
 
@@ -12,7 +13,7 @@ A simple script to help you debug every game sound
 
 - Next selector adds the selected amound to the current playing sound ID. Use 00 you repeat playing the sound.
 
-
+---
 
 **Red/Blue**
 ```
