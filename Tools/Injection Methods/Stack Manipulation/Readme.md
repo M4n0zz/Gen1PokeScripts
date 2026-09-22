@@ -1,5 +1,8 @@
 
-In order stack hijack to work it needs an OAM DMA hijack as an execution point.
+## Stack Manipulation
+
+
+This method works based on an OAM DMA hijack as an execution point.
 
 **Tutorial**
 - Find a call in rom that requires 1 or more frames in order to be completed - if it has a FrameDelay its compatibility is guaranteed.
