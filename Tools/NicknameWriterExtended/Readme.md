@@ -1,13 +1,14 @@
 
-**Nickname Writer Extended**
-
-# ![preview](Extended.PNG)
+## Nickname Writer Extended
 
 This is an extended version of TimoVM's Nickname Writer.
 
+# ![preview](Extended.PNG)
+
+
 In this version, a nickname counter is displayed in the Pokémon’s name. It is specifically designed for entering large payloads, making it easier to keep track of your progress and avoid losing the nickname you are currently importing.
 
-The script resides inside TimOS and replaces your current version. An existing TimOS setup is mandatory!
+The script resides inside TimOS Script Selector and replaces your current version. An existing TimOS setup is mandatory!
 
 ---
 
