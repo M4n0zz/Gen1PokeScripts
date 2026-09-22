@@ -41,6 +41,7 @@ Perfect for long-term use.
 3e 3e 86 cd 38 22 18 c3
 ```
 
+---
 
 **Red/Blue Standalone**
 ```
