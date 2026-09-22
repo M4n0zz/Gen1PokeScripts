@@ -12,9 +12,11 @@ def  maxscriptsadr            = $c6e9
 def  selectorpointer          = $c7c0
 def  installaddress           = $c8c5
 def  nicknameaddress          = $d8b4
-def  hardcodedbankswitch1     = $1135
-def  hardcodedbankswitch3     = $074b
-def  hardcodedbankswitch5     = $3dbd
+def  bankswitch1              = $1135
+def  bankswitch3              = $074b
+def  bankswitch5              = $3dbd
+def  popswitch                = Bankswitch+12
+
 
 
 SECTION "MultiScript", ROM0
@@ -50,12 +52,17 @@ dw   dexgiver
 dw   letsgetwild
 dw   hitrainer
 dw   poketeacher
-dw   duplicator
 dw   makeitrain
+dw   maxcoins
+dw   allbudges
 dw   instant
 dw   anypc
 dw   flier
+dw   surfer
+dw   strengther
+dw   flasher
 dw   healer
+dw   wtw
 pend:
 
 ENDL
@@ -182,36 +189,32 @@ jr   nz, poketeacher               ; if B pressed go to the beginning
 dec  a
 ld   [wWhichPokemon], a
 ld   hl, LearnMove
-call hardcodedbankswitch1
+call bankswitch1
 jr   poketeacher
 
 
-duplicator:
-; transfer pokemon id
-ld   hl, wPartySpecies             ; poke 1 id
-ld   a, [hli]
-ld   [hl], a                       ; hl = $d164
-; transfer pokemon data
-ld   bc, $002c                     ; poke data length
-ld   de, wPartyMon2                ; poke 2 data
-ld   l, low(wPartyMon1)            ; $6a - poke 1 data
-call CopyData
-; transfer pokemon nickname
-ld   de, wPartyMon1Nick            ; poke 1 nickname
-ld   hl, wPartyMon2Nick            ; poke 2 nickname
-jp   CopyString
-
-
 makeitrain:
-ld   hl,wPlayerMoney
+ld   hl, wPlayerMoney
 ld   a, $99
-ld   [hli],a
-ld   [hli],a
-ld   [hl],a
+ld   [hli], a
+ld   [hli], a
+ld   [hl], a
+ret
+
+maxcoins:
+ld   hl, wPlayerCoins
+ld   a, $99
+ld   [hli], a
+ld   [hl], a
+ret
+
+allbudges:
+ld   a, $ff
+ld   [wObtainedBadges], a
 ret
 
 instant:
-ld   hl,wOptions
+ld   hl, wOptions
 ld   a, [hl]
 and  a, $f0
 ld   [hl], a
@@ -220,17 +223,15 @@ ret
 
 anypc:
 ld   hl, ActivatePC
-jp   hardcodedbankswitch5
+jp   bankswitch5
 
 
 flier:
-; set all fly locations
-ld   hl, wTownVisitedFlag+1
+ld   hl, wTownVisitedFlag+1        ; set all fly locations
 push hl
-ld   a, [hld]
-ld   b, a
-ld   a, [hl]
-ld   c, a
+ld   b, [hl]
+dec  hl
+ld   c, [hl]
 push bc
 ld   a, $ff
 ld   [hli], a
@@ -238,16 +239,46 @@ ld   [hl], a
 call ChooseFlyDestination
 pop  bc
 pop  hl
-ld   a, b
-ld   [hld], a
-ld   a, c
-ld   [hl], a
-ret 
+ld   [hl], b
+dec  hl
+ld   [hl], c
+jp   LoadFontTilePatterns
+
+
+surfer:
+ld   hl, ItemUseSurfboard
+jp   bankswitch3
+
+
+strengther:
+ld   b, PrintStrengthText_Bank
+ld   hl, PrintStrengthText
+jp   Bankswitch
+
+
+flasher:
+ldh  a, [hLoadedROMBank]
+push af
+ld   a, StartMenu_Pokemon_Bank
+call BankswitchBack+3              ; simple bankswitch compatible for both versions
+xor  a
+ld   [wMapPalOffset], a
+ld   hl, StartMenu_PokemonflashLightsAreaText
+call PrintText
+jp   popswitch                     ; restores previous bank
 
 
 healer:
 ld   hl, HealParty
-jp   hardcodedbankswitch3
+jp   bankswitch3
+
+
+wtw:
+ld   hl, wSimulatedJoypadStatesIndex
+ld   a, $01
+xor  a, [hl]
+ld   [hl], a
+ret
 
 end:
 ENDL

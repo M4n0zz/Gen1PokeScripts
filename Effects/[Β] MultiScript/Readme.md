@@ -8,53 +8,61 @@ A Suite that includes the following scripts, all in a single installation!
 - LetsGetWild
 - HiTrainer
 - Poketeacher
-- PokeDuplicator
 - MaxMoney
+- MaxCoins
 - InstaText
 - AnyPC
 - FreeFly
+- FreeSurf
+- FreeStrength
+- FreeFlash
 - PartyHeal
+- TogglerWTW
 
 --- 
 
 **Red/Blue Installer**
 ```
-01 16 0b 11 e9 c6 1a 6f 80 12 11 c7 c7 7d 87 83 5f 21 d5 d8  
-cd 3a 12 01 1c 01 11 c5 c8 c3 b5 00 df c8 28 c9 32 c9 3f c9  
-61 c9 92 c9 ab c9 b4 c9 bc c9 c4 c9 db c9 cd 0f 19 c3 29 24  
-ea 97 cf cd 57 2d a7 fa 96 cf c9 21 09 c4 11 6d cd c3 55 19  
-cd c5 c8 3e ff cd cb c8 c0 f5 ea 1e d1 cd cf 2f cd d6 c8 3e  
-63 cd cb c8 c1 20 e5 4f cd 2e 3e 18 df cd c5 c8 3e 97 cd cb  
-c8 28 01 c9 11 1e d1 12 06 10 21 f9 4f cd d6 35 1a f5 cd 9e  
-2f cd d6 c8 3e 64 cd cb c8 c1 20 d9 c9 cd 00 c9 c0 4f cd 48  
-3e 18 f6 cd 00 c9 c0 ea 2e cd fa 1e d1 c3 da 32 cd c5 c8 3e  
-2f cd cb c8 c0 ea 31 d0 f5 cd 9e 35 cd d6 c8 f1 c6 c8 ea 1e  
-d1 3e ff cd cb c8 20 e0 18 d5 cd c5 c8 3e a5 cd cb c8 c0 ea  
-e0 d0 ea 1e d1 cd 58 30 cd d6 c8 21 4b cf 1e 6d cd 29 38 fa  
-63 d1 cd cb c8 20 db 3d ea 92 cf 21 43 6e cd 75 13 18 cf 21  
-64 d1 2a 77 01 2c 00 11 97 d1 2e 6b cd b5 00 11 b5 d2 21 c0  
-d2 c3 29 38 21 47 d3 3e 99 22 22 77 c9 21 55 d3 7e e6 f0 77  
-c9 06 05 21 2c 7e c3 d6 35 21 0c d7 e5 3a 47 7e 4f c5 3e ff  
-22 77 cd a9 30 c1 e1 78 32 79 77 c9 21 a5 76 c3 1a 09
+01 20 10 11 e9 c6 1a 6f 80 12 11 c7 c7 7d 87 83 5f 21 d5 d8  
+cd 3a 12 01 3c 01 11 c5 c8 c3 b5 00 df c8 28 c9 32 c9 3f c9  
+61 c9 92 c9 9b c9 a3 c9 a9 c9 b1 c9 b9 c9 d0 c9 d6 c9 de c9  
+f3 c9 f9 c9 cd 0f 19 c3 29 24 ea 97 cf cd 57 2d a7 fa 96 cf  
+c9 21 09 c4 11 6d cd c3 55 19 cd c5 c8 3e ff cd cb c8 c0 f5  
+ea 1e d1 cd cf 2f cd d6 c8 3e 63 cd cb c8 c1 20 e5 4f cd 2e  
+3e 18 df cd c5 c8 3e 97 cd cb c8 28 01 c9 11 1e d1 12 06 10  
+21 f9 4f cd d6 35 1a f5 cd 9e 2f cd d6 c8 3e 64 cd cb c8 c1  
+20 d9 c9 cd 00 c9 c0 4f cd 48 3e 18 f6 cd 00 c9 c0 ea 2e cd  
+fa 1e d1 c3 da 32 cd c5 c8 3e 2f cd cb c8 c0 ea 31 d0 f5 cd  
+9e 35 cd d6 c8 f1 c6 c8 ea 1e d1 3e ff cd cb c8 20 e0 18 d5  
+cd c5 c8 3e a5 cd cb c8 c0 ea e0 d0 ea 1e d1 cd 58 30 cd d6  
+c8 21 4b cf 1e 6d cd 29 38 fa 63 d1 cd cb c8 20 db 3d ea 92  
+cf 21 43 6e cd 75 13 18 cf 21 47 d3 3e 99 22 22 77 c9 21 a4  
+d5 3e 99 22 77 c9 3e ff ea 56 d3 c9 21 55 d3 7e e6 f0 77 c9  
+06 05 21 2c 7e c3 d6 35 21 0c d7 e5 46 2b 4e c5 3e ff 22 77  
+cd a9 30 c1 e1 70 2b 71 c3 80 36 21 b4 59 c3 1a 09 06 03 21  
+99 4d c3 d6 35 f0 b8 f5 3e 04 cd d0 35 af ea 5d d3 21 28 72  
+cd 49 3c c3 e4 35 21 a5 76 c3 1a 09 21 38 cd 3e 01 ae 77 c9
 ```
 
 **Yellow Installer**
 ```
-01 16 0b 11 e9 c6 1a 6f 80 12 11 c0 c7 7d 87 83 5f 21 d4 d8  
-cd ac 0e 01 1a 01 11 c5 c8 c3 b1 00 df c8 28 c9 32 c9 3f c9  
-61 c9 92 c9 ab c9 b4 c9 bc c9 c2 c9 d9 c9 cd dd 16 c3 1c 23  
-ea 96 cf cd 51 2c a7 fa 95 cf c9 21 09 c4 11 6d cd c3 23 17  
-cd c5 c8 3e ff cd cb c8 c0 f5 ea 1d d1 cd c4 2e cd d6 c8 3e  
-63 cd cb c8 c1 20 e5 4f cd 3f 3e 18 df cd c5 c8 3e 97 cd cb  
-c8 28 01 c9 11 1d d1 12 06 10 21 86 50 cd 84 3e 1a f5 cd 93  
-2e cd d6 c8 3e 64 cd cb c8 c1 20 d9 c9 cd 00 c9 c0 4f cd 59  
-3e 18 f6 cd 00 c9 c0 ea 2e cd fa 1d d1 c3 76 32 cd c5 c8 3e  
-2f cd cb c8 c0 ea 30 d0 f5 cd bb 35 cd d6 c8 f1 c6 c8 ea 1d  
-d1 3e ff cd cb c8 20 e0 18 d5 cd c5 c8 3e a5 cd cb c8 c0 ea  
-df d0 ea 1d d1 cd 4d 2f cd d6 c8 21 4a cf 1e 6d cd 16 38 fa  
-62 d1 cd cb c8 20 db 3d ea 91 cf 21 c8 6b cd 35 11 18 cf 21  
-63 d1 2a 77 01 2c 00 11 96 d1 2e 6a cd b1 00 11 b4 d2 21 bf  
-d2 c3 16 38 21 46 d3 3e 99 22 22 77 c9 21 54 d3 7e e6 f0 77  
-c9 21 b0 7c c3 bd 3d 21 0b d7 e5 3a 47 7e 4f c5 3e ff 22 77  
-cd 9a 2f c1 e1 78 32 79 77 c9 21 2b 75 c3 4b 07
+01 20 10 11 e9 c6 1a 6f 80 12 11 c0 c7 7d 87 83 5f 21 d4 d8  
+cd ac 0e 01 3a 01 11 c5 c8 c3 b1 00 df c8 28 c9 32 c9 3f c9  
+61 c9 92 c9 9b c9 a3 c9 a9 c9 b1 c9 b7 c9 ce c9 d4 c9 dc c9  
+f1 c9 f7 c9 cd dd 16 c3 1c 23 ea 96 cf cd 51 2c a7 fa 95 cf  
+c9 21 09 c4 11 6d cd c3 23 17 cd c5 c8 3e ff cd cb c8 c0 f5  
+ea 1d d1 cd c4 2e cd d6 c8 3e 63 cd cb c8 c1 20 e5 4f cd 3f  
+3e 18 df cd c5 c8 3e 97 cd cb c8 28 01 c9 11 1d d1 12 06 10  
+21 86 50 cd 84 3e 1a f5 cd 93 2e cd d6 c8 3e 64 cd cb c8 c1  
+20 d9 c9 cd 00 c9 c0 4f cd 59 3e 18 f6 cd 00 c9 c0 ea 2e cd  
+fa 1d d1 c3 76 32 cd c5 c8 3e 2f cd cb c8 c0 ea 30 d0 f5 cd  
+bb 35 cd d6 c8 f1 c6 c8 ea 1d d1 3e ff cd cb c8 20 e0 18 d5  
+cd c5 c8 3e a5 cd cb c8 c0 ea df d0 ea 1d d1 cd 4d 2f cd d6  
+c8 21 4a cf 1e 6d cd 16 38 fa 62 d1 cd cb c8 20 db 3d ea 91  
+cf 21 c8 6b cd 35 11 18 cf 21 46 d3 3e 99 22 22 77 c9 21 a3  
+d5 3e 99 22 77 c9 3e ff ea 55 d3 c9 21 54 d3 7e e6 f0 77 c9  
+21 b0 7c c3 bd 3d 21 0b d7 e5 46 2b 4e c5 3e ff 22 77 cd 9a  
+2f c1 e1 70 2b 71 c3 83 36 21 25 57 c3 4b 07 06 3d 21 06 5b  
+c3 84 3e f0 b8 f5 3e 04 cd eb 35 af ea 5c d3 21 d0 5d cd 36  
+3c c3 90 3e 21 2b 75 c3 4b 07 21 38 cd 3e 01 ae 77 c9
 ```
