@@ -15,8 +15,8 @@ This script uses an OAM DMA hijack to bypass certain ROM limitations. Any other 
 
 Choose the format that best fits your setup:
 
-- Installer Version: Permanently installs Trainer+ at a specific memory address within the TimOS environment. Perfect for long-term use.
-- Standalone Version: A temporary version that can run until a trainer battle starts. Use it for single session only!
+* **Installer Version:** Permanently installs the script at a specific memory address in the TimOS Script Selector. Ideal for long-term use.
+* **Standalone Version:** A temporary version that can run until a trainer battle begins. Use it for single session only!
 
 ---
 
