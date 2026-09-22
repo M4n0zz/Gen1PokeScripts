@@ -1,6 +1,6 @@
 # 🥚 DexGiver+
 
-Get any pokemon at any level with style!
+Get any pokemon at any level in style!
 
 # ![preview](DexGiver+.jpg)
 
