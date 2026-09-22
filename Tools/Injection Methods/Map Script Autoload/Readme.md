@@ -1,5 +1,5 @@
 
-Persistence - Permanent OAM+MSP hijack
+## Map Script Autoload
 
 **Description**
 
@@ -7,9 +7,9 @@ Setting up this hijack will create two ways to execute code permanently in the g
 1) Through OAM DMA routine: Custom payloads will be executed once in every frame, useful to program constant effects in the game.
 2) Through Map Script: Custom payloads will be executed only when player is in overworld and not moving, useful for skipping some checks in the payloads.
 
+---
 
-
-*********** Logic **********
+**Logic**
 
 Part 1
 - OAM DMA routine executes Map Script pointer (MSP) manipulator, which checks if MSP is hijacked.
