@@ -18,7 +18,7 @@ Any other active DMA hijack will stop working while this is running.
 Choose the format that best fits your setup:
 - Installer Version: Permanently installs PokeTeacher+ at a specific memory address within the TimOS environment.
 Perfect for long-term use.
-- Standalone Version: A temporary version that runs until a trainer battle starts. Great for single session or testing.
+- Standalone Version: A temporary version that can run until a trainer battle starts. Great for single session or testing.
 
 ---
 
