@@ -12,10 +12,9 @@ A minimal script that duplicates the first pokemon of your party to the second s
 
 **Warning**
 
-Trainer battle data is typically reused by the game.
+The script is temporarily stored in trainer battle data, which is overwritten when a trainer battle begins.
 
-To work around this limitation, you can use **MultiScript installer** instead.
-
+---
 
 **Red/Blue**
 ```
