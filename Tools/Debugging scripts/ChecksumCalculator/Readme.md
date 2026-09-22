@@ -1,8 +1,10 @@
-**ChecksumCalculator**
+
+## ChecksumCalculator
 
 
 A simple script that fixes a corrupted checksum without saving the game. This method CANNOT be used to recover a damaged savefile, it requires the game to already run.
 
+---
 
 **Red/Blue**
 ```
