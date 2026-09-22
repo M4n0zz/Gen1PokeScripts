@@ -1,6 +1,7 @@
 # 🎓 PokeTeacher+
 
-Teach any move to any Pokémon in your party — instantly and effortlessly!
+Teach any move to any Pokémon in your party, in style!
+
 
 # ![preview](PokeTeacher+.jpg)
 
