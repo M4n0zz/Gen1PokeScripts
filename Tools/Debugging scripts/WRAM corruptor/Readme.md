@@ -2,7 +2,7 @@ WRAM Corruptor
 
 Everytime Start is pressed, a random WRAM address is replaced with a random byte.
 
-
+---
 
 **Red/Blue**
 ```
