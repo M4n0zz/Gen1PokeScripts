@@ -7,10 +7,11 @@ A minimal script that encounters any trainer at any roster ID (glitched ones inc
 
 **Warning**
 
-Trainer battle data is reused by the game, so this script can only be executed once per input.
+The script is temporarily stored in trainer battle data, which is overwritten when a trainer battle begins.
 
-To work around this limitation, you can use **HiTrainer installer** instead.
+To work around this limitation, use the [MultiScript Installer](https://github.com/M4n0zz/Gen1PokeScripts/tree/main/Effects/%5B%CE%92%5D%20MultiScript) instead.
 
+--- 
 
 **Red/Blue**
 ```
