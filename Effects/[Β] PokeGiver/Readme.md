@@ -11,6 +11,7 @@ The script is temporarily stored in trainer battle data, which is overwritten wh
 
 To work around this limitation, use the [MultiScript Installer](https://github.com/M4n0zz/Gen1PokeScripts/tree/main/Effects/%5B%CE%92%5D%20MultiScript) instead.
 
+--- 
 
 **Red/Blue**
 ```
