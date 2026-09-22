@@ -6,6 +6,7 @@ A simple launcher for Pikachu Surfing minigame in Pokemon Yellow.
 
 # ![preview](pikasurf.png)
 
+---
 
 **Yellow**
 ```
