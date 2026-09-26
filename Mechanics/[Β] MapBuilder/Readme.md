@@ -9,7 +9,7 @@ A simple but powerful script that lets you temporarily customize your current ma
 - Use select button to choose between different tile blocks.
 
 
-The script uses Map Script to always run in the backround until map changes.
+The script uses **Map Script Pointer** manipulation, which temporarily prevents normal game events. To restore them and unload the script, simply **leave the room and re-enter it**.
 
 ---
 
