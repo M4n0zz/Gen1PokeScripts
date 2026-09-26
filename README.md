@@ -35,15 +35,15 @@ Note: Scripts marked with a + symbol are fully debugged and considered stable.
 
 ### How to run the payloads
 
-**1. Insert code:**
+1. **Insert code:**
 Use [Nickname Converter](https://timovm.github.io/NicknameConverter/) to translate the hex payload into nickname codes, then [Nickname Writer](https://glitchcity.wiki/wiki/Guides:Nickname_Writer_Codes) to inject them. Alternatively, if using a compatible emulator, just open Nickname Writer and paste the hex code directly into the appropriate memory address:
-    - $D8B5 for Pokémon Red & Blue
-    - $D8B4 for Pokémon Yellow
+   - $D8B5 for Pokémon Red & Blue
+   - $D8B4 for Pokémon Yellow
 
-**2. Run code:**
+2. **Run code:**
 After you insert the last nickname code (or just press start in case of direct hex paste) press Start again in the nickname verification screen to run it. If everything was correct the script will run without any issues. In case of an installer, the installation will be done and you will get back to items menu.
 
-**3. Verify (installers only):**
+3. **Verify (installers only):**
 Open the script selector and run the last script on the list. If everything was successful, the total number of available scripts should have increased by one, and the installed script should run without any issues.
 
 
