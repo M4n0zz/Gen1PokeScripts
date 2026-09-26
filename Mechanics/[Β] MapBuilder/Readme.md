@@ -11,6 +11,7 @@ A simple but powerful script that lets you temporarily customize your current ma
 
 The script uses Map Script to always run in the backround until map changes.
 
+---
 
 **Red/Blue**
 ```
