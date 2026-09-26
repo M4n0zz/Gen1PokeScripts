@@ -37,7 +37,6 @@ Use Nickname Writer to inject the full hex code (installer + script) into your s
 Once in-game, open the TimOS script selector and run the last script in the list.
 If everything worked correctly, the total number of available scripts should have increased by 1.
 
----
 
 **Red/Blue**
 ```
